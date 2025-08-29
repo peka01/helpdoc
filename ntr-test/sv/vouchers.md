@@ -1,4 +1,4 @@
-# Klippkort - Din biljett till träningar
+# Vouchersystemet - så funkar det
 
 ## Vad är klippkort?
 
