@@ -1,6 +1,6 @@
-# Vouchersystemet - så funkar det
+# Klippkort - så funkar det
 
-## Vad är vouchers?
+## Vad är klippkort?
 
 Tänk på klippkort som biljetter till träningar – enkelt och tydligt. Varje träning kostar ett kort. Det gör det enkelt att hålla koll på vem som kommer med på vad, och ger dig kontroll över träningsanvändningen.
 
