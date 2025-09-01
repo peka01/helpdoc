@@ -6,8 +6,8 @@ Anmäl dig enkelt till träningar som intresserar dig. Det är första steget �
 
 ## Så fungerar det
 
-### Vad är en anmälning?
-En anmälning är din intention att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
+### Vad är en anmälan?
+En anmälan är när du är intresserad av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
 
 ### Fördelar med att anmäla dig
 - **Gratis**: Anmälan kostar inga klippkort
