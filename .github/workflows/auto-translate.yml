@@ -63,6 +63,13 @@ jobs:
             echo "  ✓ $file exists ($status)"
           else
             echo "  ✗ $file does not exist ($status)"
+            # Check if it exists without the ntr-test/ prefix
+            adjusted_file=$(echo "$file" | sed 's|^ntr-test/||')
+            if [ -f "$adjusted_file" ]; then
+              echo "  ✓ $adjusted_file exists (adjusted path)"
+            else
+              echo "  ✗ $adjusted_file also does not exist (adjusted path)"
+            fi
           fi
         done
         python translate.py --mode smart-translate

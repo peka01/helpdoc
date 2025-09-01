@@ -178,23 +178,23 @@ class TranslationManager:
         try:
             # Check if we're in GitHub Actions environment
             if os.getenv('GITHUB_ACTIONS'):
-                            # In GitHub Actions, compare with the previous commit
-            result = subprocess.run(
-                ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
-                capture_output=True, text=True, check=True
-            )
-            changed_files_raw = result.stdout.strip().split('\n') if result.stdout.strip() else []
-            
-            # Parse status and filename, only include added/modified files
-            changed_files = []
-            for line in changed_files_raw:
-                if line.strip():
-                    parts = line.split('\t')
-                    if len(parts) >= 2:
-                        status, filename = parts[0], parts[1]
-                        # Only include files that were added or modified (not deleted)
-                        if status in ['A', 'M']:
-                            changed_files.append(filename)
+                # In GitHub Actions, compare with the previous commit
+                result = subprocess.run(
+                    ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
+                    capture_output=True, text=True, check=True
+                )
+                changed_files_raw = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                
+                # Parse status and filename, only include added/modified files
+                changed_files = []
+                for line in changed_files_raw:
+                    if line.strip():
+                        parts = line.split('\t')
+                        if len(parts) >= 2:
+                            status, filename = parts[0], parts[1]
+                            # Only include files that were added or modified (not deleted)
+                            if status in ['A', 'M']:
+                                changed_files.append(filename)
             else:
                 # For local development, get staged and unstaged changes
                 # First try to get staged changes
@@ -569,9 +569,18 @@ class TranslationManager:
             logger.info(f"Processing changed file: {changed_file} (language: {source_lang}, section: {source_section})")
             
             # Check if the changed file actually exists
-            if not os.path.exists(changed_file):
-                logger.warning(f"Changed file {changed_file} does not exist in filesystem. Skipping translation.")
+            # If we're in the ntr-test directory and the path starts with ntr-test/, adjust it
+            file_to_check = changed_file
+            if os.getcwd().endswith('ntr-test') and changed_file.startswith('ntr-test/'):
+                file_to_check = changed_file.replace('ntr-test/', '', 1)
+                logger.info(f"Adjusted path from {changed_file} to {file_to_check}")
+            
+            if not os.path.exists(file_to_check):
+                logger.warning(f"Changed file {file_to_check} does not exist in filesystem. Skipping translation.")
                 continue
+            
+            # Use the adjusted path for translation
+            source_file = file_to_check
             
             # Find the corresponding file in the OTHER language
             for target_lang_code, target_config in language_configs.items():
@@ -581,9 +590,9 @@ class TranslationManager:
                         source_code = language_configs[source_lang]['code'].upper()
                         target_code = target_config['code'].upper()
                         
-                        logger.info(f"Translating {changed_file} ({source_code}) → {target_file} ({target_code})")
+                        logger.info(f"Translating {source_file} ({source_code}) → {target_file} ({target_code})")
                         
-                        if self.translate_markdown_file(changed_file, target_file, source_code, target_code):
+                        if self.translate_markdown_file(source_file, target_file, source_code, target_code):
                             translated_files.append(target_file)
                         else:
                             success = False
