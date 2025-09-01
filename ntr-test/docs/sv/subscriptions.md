@@ -4,7 +4,7 @@
 
 Registrera dig enkelt för träningar som intresserar dig. Det är det första steget - att registrera sig är gratis och gör att du kan delta när det är dags.
 
-## Hur det fungerar
+## Hur saker o ting funkar
 
 ### Vad är en anmälan?
 En anmälan innebär att du visar intresse av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
