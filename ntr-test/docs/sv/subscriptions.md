@@ -2,12 +2,12 @@
 
 ## Översikt
 
-Registrera dig enkelt för utbildningar som intresserar dig. Det är det första steget - att registrera sig är gratis och gör att du kan delta när det är dags.
+Registrera dig enkelt för träningar som intresserar dig. Det är det första steget - att registrera sig är gratis och gör att du kan delta när det är dags.
 
 ## Hur det fungerar
 
 ### Vad är en anmälan?
-En anmälan är när du är intresserad av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
+En anmälan innebär att du visar intresse av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
 
 ### Fördelarna med att registrera sig
 - **Gratis**: Det kostar inget att registrera sig för en voucher
