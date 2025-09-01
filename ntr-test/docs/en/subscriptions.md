@@ -1,4 +1,4 @@
-# Registration for training sessions
+# Register for training sessions
 
 ## Overview
 
@@ -7,7 +7,7 @@ Easily register for trainings that interest you. That's the first step - registe
 ## How things work
 
 ### What is a registration?
-A registration means that you show interest in joining. It's like 'reserving a seat' - you show interest but don't commit to actually attending.
+A registration means that you show interest in joining. It's like 'reserving a seat' - you show interest but do not commit to actually participating.
 
 ### Benefits of registering
 - **Free**: There is no cost to register for a training session with us
@@ -21,7 +21,7 @@ A registration means that you show interest in joining. It's like 'reserving a s
 1. Go to the **Registration page**
 2. Browse the available trainings
 3. Read the description of each training
-4. Click on **"Register"** next to the training you want to attend
+4. Click on **"Sign up"** next to the training you want to attend
 5. Confirm your registration
 
 ### What you see for each training
@@ -65,7 +65,7 @@ A registration means that you show interest in joining. It's like 'reserving a s
 ## Tips for smart registration management
 
 ### Plan your training sessions
-1. **Sign up for interesting trainings**: Sign up for trainings that seem interesting
+1. **Sign up for interesting workouts**: Sign up for workouts that seem interesting
 2. **Keep an eye on your schedule**: Make sure your workouts don't clash with other activities
 3. **Be realistic**: Don't sign up for more workouts than you can handle
 
@@ -93,8 +93,8 @@ No, you can only register for future trainings.
 **Do I have to register in order to participate in a training session?
 Yes, you need to register first and then mark attendance when the time comes.
 
-**What happens if I forget to deregister?
-Nothing serious - you can still unregister later and no trainings will be consumed until you are marked as present.
+**What happens if I forget to unregister?
+Nothing serious - you can still unregister later and no trainings will be consumed until you have been marked as present.
 
 **Can I see who is registered for a training?
 It depends on the platform settings - ask the administrator about this.
@@ -102,7 +102,7 @@ It depends on the platform settings - ask the administrator about this.
 ## Troubleshooting
 
 **Cannot register
-- Check that the training is not full
+- Check that the training is not fully subscribed
 - Check that the training has not already started
 - Refresh the page and try again
 

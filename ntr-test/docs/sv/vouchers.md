@@ -1,8 +1,8 @@
-# Träningskortet- Din biljett till träningstillfällena
+# Utbildningskortet - din biljett till utbildningstillfällena
 
-## Vad är ett träningskort?
+## Vad är ett utbildningskort?
 
-Tänk på träningskort som biljetter till träningstillfällen - enkelt och tydligt. Varje träningsstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
+Tänk på utbildningskort som biljetter till utbildningstillfällen - helt enkelt. Varje utbildningstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
 
 ## Så här fungerar det
 
@@ -34,7 +34,7 @@ Om du avbokar din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är
 
 ## Tips för att använda kort på ett smart sätt
 
-1. **Planera i förväg**: Anmäl dig till utbildning tidigt, men markera närvaro först när du är säker på att
+1. **Planera i förväg**: Anmäl dig till utbildning i god tid, men markera närvaro först när du är säker på att
 2. **Håll koll**: Kontrollera ditt saldo regelbundet
 3. **Avboka i tid**: Kan du inte komma? Avboka din närvaro så snart som möjligt
 4. **Begära mer**: Kontakta administratören innan det tar slut, inte efter

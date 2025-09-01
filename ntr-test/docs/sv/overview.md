@@ -1,5 +1,5 @@
 # Välkommen till din nya värld - en värld av utbildning!
-Glöm komplicerade system och pappersarbete. Här är en enkel och smidig lösning för att organisera utbildning - så att du kan fokusera på det som verkligen betyder något.
+Glöm komplicerade system och pappersarbete. Här är en enkel och smidig lösning för att organisera utbildningen - så att du kan fokusera på det som verkligen betyder något.
 ## Vad får du ut av det?
 ### Som deltagare:
 - **Lätt att gå med**: Registrera dig för utbildningar på några sekunder
@@ -10,7 +10,7 @@ Glöm komplicerade system och pappersarbete. Här är en enkel och smidig lösni
 - **Hantera användare enkelt**: Skapa och uppdatera konton med lätthet
 - **Organisera utbildningar på ett smidigt sätt**: Skapa, redigera och planera aktiviteter
 - **Utdela stämpelkort**: Hantera kort för alla användare
-- **Följ vad som händer**: Visa statistik och rapporter
+- **Spåra vad som händer**: Visa statistik och rapporter
 ## Så här fungerar det
 Det är enkelt! Vi har tre huvuddelar:
 1. **Users** - Deltagare som vill gå med i utbildningar
@@ -18,8 +18,8 @@ Det är enkelt! Vi har tre huvuddelar:
 3. **Clipboard** - Det som används för att delta i utbildningar
 ## Teknisk bas
 - ** Fungerar överallt**: Öppnas i alla webbläsare
-- **Uppdateras omedelbart**: Ändringar syns omedelbart utan omladdning
+- **Uppdateras direkt**: Ändringar syns omedelbart utan omladdning
 - **Säkert**: All information lagras på ett säkert sätt
 - **Växer med dig**: Fungerar lika bra för små som för stora grupper
 ## Kom igång
-Utforska hjälpavsnitten för att lära dig hur du använder plattformen på bästa sätt. Varje avsnitt innehåller tydliga instruktioner och tips som hjälper dig att få ut mesta möjliga av din tid.
+Utforska hjälpavsnitten för att lära dig hur du bäst använder plattformen. Varje avsnitt innehåller tydliga instruktioner och tips som hjälper dig att få ut så mycket som möjligt av din tid.

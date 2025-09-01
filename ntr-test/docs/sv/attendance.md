@@ -51,16 +51,16 @@ Du kan avbryta din närvaro om du:
 - **Flexibilitet**: Du kan anmäla dig till flera utbildningar och välja vilka du faktiskt deltar i
 
 ### Tidsramar
-- **Ingen tidsgräns**: Du kan avboka din närvaro när som helst
+- **Ingen tidsgräns**: Du kan avbryta din närvaro när som helst
 - **Omedelbar återbetalning**: Vouchers återbetalas omedelbart när du avbokar
-- **Planera i förväg**: Anmäl dig till utbildningar i förväg, markera närvaro när du är säker på att
+- **Planera i förväg**: Registrera dig för utbildningar i förväg, markera närvaro när du är säker på att
 
 ## Tips för smart närvarohantering
 
 ### Planera dina utbildningstillfällen
-1. **Anmäl dig i förväg**: anmäl dig till utbildningar som du är intresserad av
-2. **Markera närvaro när du är säker**: Vänta med att markera närvaro tills du är säker på att du kan delta
-3. **Håll koll på ditt saldo**: Kontrollera saldot på din voucher regelbundet
+1. **Förhandsanmälan**: anmäl dig till utbildningar som du är intresserad av
+2. **Markera närvaro när du är säker**: vänta med att markera närvaro tills du är säker på att du kan delta
+3. **Håll koll på ditt saldo**: kontrollera regelbundet saldot på din voucher
 
 ### Hantera ändringar
 1. **Avboka i tid**: Om du inte kan delta, avboka så snart som möjligt
@@ -68,7 +68,7 @@ Du kan avbryta din närvaro om du:
 3. **Omplanera**: Använd din återbetalda voucher för andra utbildningstillfällen
 
 ### Felsökning
-- **Det går inte att markera närvaro**: Kontrollera att du är registrerad och har tillräckligt med hålkort
+- **Kan inte markera närvaro**: Kontrollera att du är registrerad och har tillräckligt med hålkort
 - **Knappen fungerar inte**: Uppdatera sidan och försök igen
 - **Stämpelkortet har inte dragits**: Kontrollera ditt saldo och kontakta administratören om problemet kvarstår
 
@@ -81,10 +81,10 @@ Nej, det är bara du som kan markera din egen närvaro.
 Du kan avbryta närvaron omedelbart och få tillbaka din voucher.
 
 **Kan jag markera närvaro flera gånger för samma kurs?
-Nej, du kan bara markera närvaro en gång per utbildning.
+Nej, du kan bara markera närvaro en gång per kurs.
 
-**Måste jag markera närvaro direkt när utbildningen börjar?
+** Måste jag markera närvaro direkt när kursen börjar?
 Nej, du kan markera närvaro när som helst, men det är bra att göra det i förväg så att utbildaren vet att du kommer.
 
-**Vad händer om jag missar att markera närvaro?
-Om du inte markerar närvaro kommer ingen voucher att användas, men utbildaren vet inte att du har deltagit.
+**Vad händer om jag inte markerar närvaro?
+Om du inte markerar närvaro kommer ingen voucher att användas, men utbildaren kommer inte att veta att du har deltagit.
