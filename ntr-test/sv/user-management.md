@@ -1,4 +1,4 @@
-# Användarhantering - Administratörsguide
+# Användarhantering - din hjälp till att administrera
 
 ## Översikt
 
