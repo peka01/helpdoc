@@ -94,7 +94,7 @@ Nej, du kan bara anmäla dig till framtida träningar.
 Ja, du måste registrera dig först och sedan markera närvaro när det är dags.
 
 **Vad händer om jag glömmer att avregistrera mig?
-Inget allvarligt - du kan fortfarande avanmäla dig senare och inga kuponger kommer att användas förrän du markerar närvaro.
+Inget allvarligt - du kan fortfarande avanmäla dig senare och inga träningar kommer att förbrukas förrän du markeras som närvarande.
 
 **Kan jag se vem som är anmäld till en träning?
 Det beror på plattformsinställningarna - fråga administratören om detta.
