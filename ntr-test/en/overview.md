@@ -1,5 +1,4 @@
-# Welcome to training management
-
+# Welcome to Your Training - the new system for managing trainings!
 Forget complicated systems and paperwork. Here you get a simple and smooth solution for organizing trainings – so you can focus on what really matters.
 
 ## What do you get out of it?
