@@ -26,10 +26,10 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
    - Se till att du är registrerad för utbildningen
    - Registrera dig först om du inte är det
 
-3. **Kontrollera tidigare närvaro**
+3. **Kontrollera din tidigare närvaro**
    - Gå till vyn Närvaro
-   - Se om du redan har markerat närvaro för den här utbildningen
-   - Avboka tidigare närvaro om du vill markera igen
+   - Se om du redan har markerat närvaro för den här kursen
+   - Avbryt tidigare närvaro om du vill markera igen
 
 4. **Uppdatera sidan
    - Tryck på F5 eller klicka på uppdateringsknappen
@@ -37,7 +37,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 
 ### "Övningen visas inte i listan"
 
-**Symtom:** En övning som du förväntade dig att se finns inte med i listan.
+**Symtom:** En övning som du förväntade dig att se finns inte i listan.
 
 **Möjliga orsaker:**
 - Övningen har tagits bort av administratören
@@ -45,7 +45,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 - Plattformen håller fortfarande på att laddas
 - Problem med nätverket
 
-**Här är hur du löser det:**
+**Så här löser du det:**
 1. **Aktualisera sidan**
    - Tryck på F5 eller klicka på uppdateringsknappen
    - Vänta några sekunder
@@ -54,8 +54,8 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
    - Kontrollera att du har en internetanslutning
    - Försök att ladda om sidan
 
-3. **Kolla med administratören**
-   - Fråga administratören om utbildningen fortfarande finns kvar
+3. **Kolla med administratören
+   - Fråga administratören om utbildningen fortfarande är tillgänglig
    - Be dem kontrollera om den har tagits bort eller flyttats
 
 ### "Saldot i klippbordet är inte uppdaterat"
@@ -86,12 +86,12 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
    - Be administratören att kontrollera ditt saldo
    - De kan se det faktiska värdet i plattformen
 
-### "Kan inte registrera mig för utbildning"
+### "Det går inte att registrera sig för utbildning"
 
-**Symtom:** "Registrera"-knappen fungerar inte eller ger ett felmeddelande.
+**Symtom:** Knappen "Registrera" fungerar inte eller ger ett felmeddelande.
 
 **Möjliga orsaker:**
-- Utbildningen är full
+- Utbildningen är fulltecknad
 - Utbildningen har redan startat
 - Du är redan registrerad
 - Fel på plattformen
@@ -107,7 +107,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
    - Vänta några sekunder
    - Försök igen
 
-3. **Kontakta administratören**
+3. **Kontakta administratören
    - Be dem att kontrollera utbildningsinställningarna
    - De kan se om det finns tekniska problem
 
@@ -120,14 +120,14 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 - Webbläsarens cache
 - JavaScript-fel
 
-**Så här åtgärdar du det
+**Hur man åtgärdar det
 1. **Uppdatera sidan
-   - Tryck på F5
+   - Tryck på F5-tangenten
    - Vänta tills sidan är fulladdad
 
 2. **Rensa cacheminnet**
    - Tryck på Ctrl+F5
-   - Detta tvingar fram en omstart av alla resurser
+   - Detta kommer att tvinga fram en omstart av alla resurser
 
 3. **Kontrollera JavaScript**
    - Kontrollera att JavaScript är aktiverat i din webbläsare
@@ -142,7 +142,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 - Du misstänker att det är ett plattformsfel
 
 ### Vad du ska inkludera när du kontaktar administratören:
-- **Din e-postadress**: Så att de kan identifiera ditt konto
+- **Din e-postadress**: så att de kan identifiera ditt konto
 - **Beskrivning av problemet**: Vad som händer och vad du förväntar dig
 - **Steg du har provat**: Lista vad du redan har försökt
 - **Felmeddelanden**: Kopiera eventuella felmeddelanden
@@ -152,15 +152,15 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 
 ### För att undvika problem:
 1. **Aktualisera regelbundet**: Ladda om sidan när du märker att något verkar konstigt
-2. **Kontrollera saldot**: Håll koll på saldot för din voucher regelbundet
-3. **Anmäl dig i tid**: Anmäl dig till utbildningar så snart du vet att du är intresserad
+2. **Kontrollera saldot**: Kontrollera saldot på din voucher regelbundet
+3. **Registrera i tid**: Anmäl dig till utbildningar så snart du vet att du är intresserad
 4. **Markera närvaro när du är säker**: Vänta med att markera närvaro tills du är säker på att du kan delta
 
 ### Tekniska tips:
 - **Använd moderna webbläsare**: Chrome, Firefox, Safari eller Edge
 - **Håll din webbläsare uppdaterad**: Installera uppdateringar regelbundet
-- **Rensa cacheminnet regelbundet**: Detta kan lösa många problem
-- **Kontrollera internetanslutningen**: Se till att du har en stabil anslutning
+- **Rensa din cache regelbundet**: Detta kan lösa många problem
+- **Kontrollera din internetanslutning**: Se till att du har en stabil anslutning
 
 ## Snabbguide till vanliga åtgärder
 
@@ -181,4 +181,4 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 ### Kontrollera nätverksanslutningen
 - Försök att öppna en annan webbsida
 - Kontrollera att du inte är offline
-- Prova att starta om routern om problemet kvarstår
+- Försök starta om routern om problemet kvarstår
