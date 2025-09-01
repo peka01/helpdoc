@@ -99,20 +99,50 @@ const newPaths = {
 
 ### **Option 2: Use Updated help-config.json**
 
-The `help-config.json` file has been updated to include the new file paths:
+The `help-config.json` file has been updated with a new multi-app structure that supports multiple applications and locales:
 
 ```json
 {
+  "apps": {
+    "ntr-app": {
+      "name": "NTR Training Management System",
+      "baseUrl": "ntr-test",
+      "locales": {
+        "sv-se": {
+          "code": "sv",
+          "name": "Svenska",
+          "file_paths": {
+            "overview": "docs/sv/overview.md",
+            "vouchers": "docs/sv/vouchers.md",
+            "user-management": "docs/sv/user-management.md",
+            "training-management": "docs/sv/training-management.md",
+            "subscriptions": "docs/sv/subscriptions.md",
+            "attendance": "docs/sv/attendance.md",
+            "troubleshooting": "docs/sv/troubleshooting.md"
+          }
+        },
+        "en-se": {
+          "code": "en",
+          "name": "English",
+          "file_paths": {
+            "overview": "docs/en/overview.md",
+            "vouchers": "docs/en/vouchers.md",
+            "user-management": "docs/en/user-management.md",
+            "training-management": "docs/en/training-management.md",
+            "subscriptions": "docs/en/subscriptions.md",
+            "attendance": "docs/en/attendance.md",
+            "troubleshooting": "docs/en/troubleshooting.md"
+          }
+        }
+      }
+    }
+  },
   "sections": [
     {
       "id": "overview",
       "title": {
         "sv": "Systemöversikt",
         "en": "System Overview"
-      },
-      "file_paths": {
-        "sv": "docs/sv/overview.md",
-        "en": "docs/en/overview.md"
       },
       "keywords": ["overview", "system", "features", "architecture"],
       "category": "general"
@@ -121,22 +151,46 @@ The `help-config.json` file has been updated to include the new file paths:
 }
 ```
 
-**Use the `file_paths` property** to dynamically fetch the correct files:
+**Use the new structure** to dynamically fetch the correct files:
 
 ```javascript
-// ✅ Fetch using updated config
+// ✅ Fetch using updated config with multi-app support
 const config = await fetch('ntr-test/help-config.json').then(r => r.json());
 
-config.sections.forEach(section => {
-  const svPath = section.file_paths.sv;
-  const enPath = section.file_paths.en;
+// Get NTR app configuration
+const ntrApp = config.apps['ntr-app'];
+const baseUrl = ntrApp.baseUrl;
+
+// Fetch content for specific locale and section
+function fetchContent(appId, locale, sectionId) {
+  const app = config.apps[appId];
+  const localeConfig = app.locales[locale];
+  const filePath = localeConfig.file_paths[sectionId];
   
-  // Fetch Swedish content
-  fetch(`ntr-test/${svPath}`).then(r => r.text());
-  
-  // Fetch English content
-  fetch(`ntr-test/${enPath}`).then(r => r.text());
+  return fetch(`${app.baseUrl}/${filePath}`).then(r => r.text());
+}
+
+// Example usage:
+// Fetch Swedish overview
+fetchContent('ntr-app', 'sv-se', 'overview').then(content => {
+  console.log('Swedish overview:', content);
 });
+
+// Fetch English troubleshooting
+fetchContent('ntr-app', 'en-se', 'troubleshooting').then(content => {
+  console.log('English troubleshooting:', content);
+});
+
+// Get all available sections for a locale
+function getAvailableSections(appId, locale) {
+  const app = config.apps[appId];
+  const localeConfig = app.locales[locale];
+  return Object.keys(localeConfig.file_paths);
+}
+
+// Example: Get all Swedish sections
+const swedishSections = getAvailableSections('ntr-app', 'sv-se');
+console.log('Available Swedish sections:', swedishSections);
 ```
 
 ### **Option 3: Create Backward Compatibility (Advanced)**
