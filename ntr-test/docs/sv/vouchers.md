@@ -13,9 +13,6 @@ Som ny användare börjar du med 0 stämpelkort. Detta är helt normalt! Du komm
 - **Registrera dig gratis**: Registrera dig för så många utbildningar du vill - inget kort används
 - **Närvaro kostar**: Ett kort dras endast när du faktiskt markerar närvaro
 
-### Få tillbaka ditt kort
-Om du avbokar din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är det!
-
 ## Viktiga regler
 
 ### Du behöver ett kort för att delta
@@ -39,10 +36,10 @@ Om du avbokar din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är
 3. **Avboka i tid**: Kan du inte komma? Avboka din närvaro så snart som möjligt
 4. **Begära mer**: Kontakta administratören innan det tar slut, inte efter
 
-## Ofta ställda frågor
+## FAQ
 
-**Kan jag använda någon annans stämpelkort?
-Nej, stämpelkort är personliga och kan inte delas.
+**Kan jag använda någon annans träningskort?
+Nej, korten  är personliga och kan inte delas.
 
 **Vad händer om jag markerar närvaro av misstag?
 Avboka närvaron omedelbart så får du tillbaka kortet.
