@@ -1,4 +1,4 @@
-# Träningshantering - Administratörsguide
+# Träningshantering - Din guide till administrationen
 
 ## Översikt
 
