@@ -4,13 +4,13 @@
 
 Registrera dig enkelt för träningar som intresserar dig. Det är det första steget - att registrera sig är gratis och gör att du kan delta när det är dags.
 
-## Hur träningsanmälan fungerar
+## Hur saker och ting fungerar
 
-### Vad är en anmälan?
-En anmälan innebär att du visar intresse för att vara med. Det är som att "reservera en plats" - du visar intresse men förbinder dig inte att faktiskt delta.
+### Vad är en registrering?
+En registrering innebär att du visar intresse för att vara med. Det är som att "reservera en plats" - du visar intresse men förbinder dig inte att faktiskt delta.
 
-### Fördelarna med att anmäla sig
-- **Gratis**: Det kostar inget att anmäla sig för en träning hos oss
+### Fördelarna med att registrera sig
+- **Gratis**: Det kostar inget att registrera sig för en träning hos oss
 - **Flexibilitet**: Du kan avregistrera dig när som helst
 - **Överblick**: Du ser alla träningar som du är intresserad av
 - **Påminnelser**: Du kommer ihåg vilka träningar som är tillgängliga
@@ -18,7 +18,7 @@ En anmälan innebär att du visar intresse för att vara med. Det är som att "r
 ## Registrera dig för träningar
 
 ### Så här gör du
-1. Gå till **Anmälningssidan**
+1. Gå till **Registreringssidan**
 2. Bläddra bland de tillgängliga träningarna
 3. Läs beskrivningen av varje träning
 4. Klicka på **"Registrera dig"** bredvid den träning du vill delta i
@@ -33,7 +33,7 @@ En anmälan innebär att du visar intresse för att vara med. Det är som att "r
 
 ## Hantera dina registreringar
 
-### Visa dina registreringar
+### Visa dina prenumerationer
 - **Registreringssida**: Visar alla träningar som du är registrerad för
 - **Närvarovy**: Visar registreringsstatus för varje träning
 - **Översikt**: Du kan tydligt se vilka träningar du planerar att delta i
@@ -42,7 +42,7 @@ En anmälan innebär att du visar intresse för att vara med. Det är som att "r
 1. Gå till **Registreringssidan**
 2. Hitta den träning du vill avregistrera dig från
 3. Klicka på **"Avregistrera dig"**
-4. Bekräfta att du vill avsluta prenumerationen
+4. Bekräfta att du vill avregistrera dig
 
 ### Vad händer när du avregistrerar dig?
 - Du kommer att tas bort från deltagarlistan
@@ -50,7 +50,7 @@ En anmälan innebär att du visar intresse för att vara med. Det är som att "r
 - Du kan omregistrera dig om du vill
 - Platsen blir tillgänglig för andra
 
-## Viktiga regler
+## Regler som vi vill att du ska känna till
 
 ### Registrering vs närvaro
 - **Registrering är gratis**: Du kan anmäla dig till så många träningar du vill
