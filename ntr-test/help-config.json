@@ -6,6 +6,10 @@
         "sv": "Systemöversikt",
         "en": "System Overview"
       },
+      "file_paths": {
+        "sv": "docs/sv/overview.md",
+        "en": "docs/en/overview.md"
+      },
       "keywords": ["overview", "system", "features", "architecture"],
       "category": "general"
     },
@@ -14,6 +18,10 @@
       "title": {
         "sv": "Klippkortssystem",
         "en": "Voucher System"
+      },
+      "file_paths": {
+        "sv": "docs/sv/vouchers.md",
+        "en": "docs/en/vouchers.md"
       },
       "keywords": ["voucher", "credits", "balance", "cost", "refund"],
       "category": "general"
@@ -24,6 +32,10 @@
         "sv": "Användarhantering (Admin)",
         "en": "User Management (Admin)"
       },
+      "file_paths": {
+        "sv": "docs/sv/user-management.md",
+        "en": "docs/en/user-management.md"
+      },
       "keywords": ["create user", "add user", "manage vouchers", "admin", "user list"],
       "category": "admin"
     },
@@ -32,6 +44,10 @@
       "title": {
         "sv": "Träningshantering (Admin)",
         "en": "Training Management (Admin)"
+      },
+      "file_paths": {
+        "sv": "docs/sv/training-management.md",
+        "en": "docs/en/training-management.md"
       },
       "keywords": ["create training", "edit training", "admin training", "training management"],
       "category": "admin"
@@ -42,6 +58,10 @@
         "sv": "Träningsanmälningar (Användare)",
         "en": "Training Subscriptions (User)"
       },
+      "file_paths": {
+        "sv": "docs/sv/subscriptions.md",
+        "en": "docs/en/subscriptions.md"
+      },
       "keywords": ["subscribe", "unsubscribe", "subscription", "public view", "user subscription"],
       "category": "user"
     },
@@ -51,6 +71,10 @@
         "sv": "Närvarohantering (Användare)",
         "en": "Attendance Management (User)"
       },
+      "file_paths": {
+        "sv": "docs/sv/attendance.md",
+        "en": "docs/en/attendance.md"
+      },
       "keywords": ["mark attendance", "cancel attendance", "attendance view", "voucher deduction", "refund"],
       "category": "user"
     },
@@ -59,6 +83,10 @@
       "title": {
         "sv": "Felsökning",
         "en": "Troubleshooting"
+      },
+      "file_paths": {
+        "sv": "docs/sv/troubleshooting.md",
+        "en": "docs/en/troubleshooting.md"
       },
       "keywords": ["error", "problem", "issue", "cannot mark", "not appearing", "balance not updating"],
       "category": "general"

@@ -1,0 +1,107 @@
+site_name: Training Management System Help
+site_description: Help documentation for the Training Management System
+site_author: NTR Team
+site_url: https://help.ntr-system.com
+
+# Documentation directory
+docs_dir: docs
+
+# Repository
+repo_name: ntr/helpdoc
+repo_url: https://github.com/ntr/helpdoc
+edit_uri: edit/main/ntr-test/
+
+# Theme configuration
+theme:
+  name: material
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - System Overview:
+    - Swedish: sv/overview.md
+    - English: en/overview.md
+  - Voucher System:
+    - Swedish: sv/vouchers.md
+    - English: en/vouchers.md
+  - Admin Guides:
+    - User Management:
+      - Swedish: sv/user-management.md
+      - English: en/user-management.md
+    - Training Management:
+      - Swedish: sv/training-management.md
+      - English: en/training-management.md
+  - User Guides:
+    - Training Subscriptions:
+      - Swedish: sv/subscriptions.md
+      - English: en/subscriptions.md
+    - Attendance Management:
+      - Swedish: sv/attendance.md
+      - English: en/attendance.md
+  - Troubleshooting:
+    - Swedish: sv/troubleshooting.md
+    - English: en/troubleshooting.md
+  - Guidelines:
+    - Content Guidelines: CONTENT_GUIDELINES.md
+    - Tone and Voice: TONE_AND_VOICE_GUIDELINES.md
+    - Writing Checklist: WRITING_CHECKLIST.md
+
+# Plugins
+plugins:
+  - search
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      anchorlink: true
+      permalink: true
+      title: On this page
+
+# Extra CSS and JS
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Copyright
+copyright: Copyright &copy; 2024 NTR Team
