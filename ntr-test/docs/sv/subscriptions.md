@@ -1,4 +1,4 @@
-# Anmälan till träningar - Anmäl dig till träningar
+# Anmälan till träningar
 
 ## Översikt
 
@@ -7,7 +7,7 @@ Registrera dig enkelt för träningar som intresserar dig. Det är det första s
 ## Hur saker o ting funkar
 
 ### Vad är en anmälan?
-En anmälan innebär att du visar intresse av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
+En anmälan innebär att du visar intresse av att hänga med. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
 
 ### Fördelarna med att registrera sig
 - **Gratis**: Det kostar inget att registrera sig för en träning hos oss
