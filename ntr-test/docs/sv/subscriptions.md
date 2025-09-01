@@ -1,17 +1,17 @@
-# Anmälan till träningar - Anmäl dig till träningar
+# Registrera dig för träningar
 
 ## Översikt
 
 Registrera dig enkelt för träningar som intresserar dig. Det är det första steget - att registrera sig är gratis och gör att du kan delta när det är dags.
 
-## Hur det fungerar
+## Hur saker och ting fungerar
 
-### Vad är en anmälan?
-En anmälan innebär att du visar intresse av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
+### Vad är en registrering?
+En registrering innebär att du visar intresse för att vara med. Det är som att "reservera en plats" - du visar intresse men förbinder dig inte att faktiskt delta.
 
 ### Fördelarna med att registrera sig
 - **Gratis**: Det kostar inget att registrera sig för en träning hos oss
-- **Flexibilitet**: Du kan avsluta prenumerationen när som helst
+- **Flexibilitet**: Du kan avregistrera dig när som helst
 - **Överblick**: Du ser alla träningar som du är intresserad av
 - **Påminnelser**: Du kommer ihåg vilka träningar som är tillgängliga
 
@@ -21,7 +21,7 @@ En anmälan innebär att du visar intresse av att delta i en träning. Det är s
 1. Gå till **Registreringssidan**
 2. Bläddra bland de tillgängliga träningarna
 3. Läs beskrivningen av varje träning
-4. Klicka på **"Registrera"** bredvid den träning du vill delta i
+4. Klicka på **"Registrera dig"** bredvid den träning du vill delta i
 5. Bekräfta din registrering
 
 ### Vad du ser för varje träning
@@ -33,7 +33,7 @@ En anmälan innebär att du visar intresse av att delta i en träning. Det är s
 
 ## Hantera dina registreringar
 
-### Se dina registreringar
+### Visa dina registreringar
 - **Registreringssida**: Visar alla träningar som du är registrerad för
 - **Närvarovy**: Visar registreringsstatus för varje träning
 - **Översikt**: Du kan tydligt se vilka träningar du planerar att delta i
@@ -41,12 +41,12 @@ En anmälan innebär att du visar intresse av att delta i en träning. Det är s
 ### Avregistrera dig från träningar
 1. Gå till **Registreringssidan**
 2. Hitta den träning du vill avregistrera dig från
-3. Klicka på **"Avregistrera"**
+3. Klicka på **"Avregistrera dig"**
 4. Bekräfta att du vill avsluta prenumerationen
 
 ### Vad händer när du avregistrerar dig?
 - Du kommer att tas bort från deltagarlistan
-- Saldot på din voucher påverkas inte
+- Saldot på din voucher kommer inte att påverkas
 - Du kan omregistrera dig om du vill
 - Platsen blir tillgänglig för andra
 
@@ -66,8 +66,8 @@ En anmälan innebär att du visar intresse av att delta i en träning. Det är s
 
 ### Planera dina träningspass
 1. **Anmäl dig till intressanta träningar**: Anmäl dig till träningar som verkar intressanta
-2. **Håll ett öga på ditt schema**: Se till att dina träningar inte krockar med andra aktiviteter
-3. **Var realistisk**: Anmäl dig inte till fler träningar än du klarar av
+2. **Håll ett öga på ditt schema**: Se till att dina träningspass inte krockar med andra aktiviteter
+3. **Var realistisk**: Anmäl dig inte till fler träningspass än du klarar av
 
 ### Hantera förändringar
 1. **Avboka i tid**: Om du vet att du inte kan delta, avboka så snart som möjligt
@@ -79,30 +79,30 @@ En anmälan innebär att du visar intresse av att delta i en träning. Det är s
 2. **Balans**: Blanda olika typer av träningar
 3. **Uppdatera regelbundet**: Se över dina registreringar regelbundet
 
-## Vanliga frågor och svar
+## Ofta ställda frågor och svar
 
 **Kan jag anmäla mig till flera träningar samtidigt?
 Ja, du kan anmäla dig till så många träningar som du vill.
 
-**Vad händer om jag anmäler mig till en träning som är full?
+**Vad händer om jag anmäler mig till en träning som är fulltecknad?
 Du kommer att få ett meddelande om att träningen är full och du kommer inte att kunna registrera dig.
 
-**Kan jag anmäla mig till träningar som redan har startat?**
-Nej, du kan bara anmäla dig till framtida träningar.
+**Kan jag anmäla mig till träningar som redan har startat?
+Nej, du kan bara registrera dig för framtida träningar.
 
-**Måste jag registrera mig för att kunna delta i en träning?
+** Måste jag registrera mig för att kunna delta i en träning?
 Ja, du måste registrera dig först och sedan markera närvaro när det är dags.
 
 **Vad händer om jag glömmer att avregistrera mig?
-Inget allvarligt - du kan fortfarande avanmäla dig senare och inga träningar kommer att förbrukas förrän du markeras som närvarande.
+Inget allvarligt - du kan fortfarande avregistrera dig senare och inga träningar kommer att konsumeras förrän du har markerats som närvarande.
 
-**Kan jag se vem som är anmäld till en träning?
+**Kan jag se vem som är registrerad för en träning?
 Det beror på plattformsinställningarna - fråga administratören om detta.
 
 ## Felsökning
 
 **Kan inte registrera mig
-- Kontrollera att träningen inte är full
+- Kontrollera att träningen inte är fulltecknad
 - Kontrollera att träningen inte redan har startat
 - Uppdatera sidan och försök igen
 

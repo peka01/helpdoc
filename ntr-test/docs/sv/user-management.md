@@ -26,7 +26,7 @@ Som administratör har du kontroll över användarna och deras hålkort. Här hi
 1. Hitta användaren i listan
 2. Leta efter deras aktuella saldo
 3. Klicka på **"+"** bredvid saldot
-4. Ett kort kommer att läggas till direkt
+4. Ett kort kommer att läggas till omedelbart
 
 ### Ta bort kortet
 1. Hitta användaren i listan
@@ -56,12 +56,12 @@ Som administratör har du kontroll över användarna och deras hålkort. Här hi
 ### Hantera hålkort på ett smart sätt
 - **Sätt tydliga regler**: Bestäm hur många kort olika användare ska ha
 - **Håll koll**: Se vem som använder sina kort snabbt
-- **Lämna ut regelbundet**: Överväg att dela ut korten regelbundet istället för alla på en gång
+- **Lämna ut regelbundet**: Överväg att dela ut korten regelbundet i stället för alla på en gång
 
 ### Kommunicera med användarna
 - **Förklara hur det fungerar**: Se till att användarna förstår vouchersystemet
 - **Tydliga regler**: Förklara tydligt när och hur korten kan användas
-- **Vara tillgänglig**: Svara på frågor om kort och plattformen
+- **Vara tillgänglig**: Svara på frågor om korten och plattformen
 
 ### Hantera effektivt
 - **Stora grupper**: För många användare, skapa dem i grupper
