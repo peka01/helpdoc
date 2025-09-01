@@ -160,32 +160,41 @@ class TranslationManager:
     def get_changed_files(self) -> List[str]:
         """Get list of changed files from git."""
         try:
-            # In GitHub Actions, we need to compare with the previous commit
-            # First try to get staged changes (for local development)
-            result = subprocess.run(
-                ['git', 'diff', '--cached', '--name-only', '--diff-filter=ACM'],
-                capture_output=True, text=True, check=True
-            )
-            staged_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
-            
-            # Also get unstaged changes
-            result = subprocess.run(
-                ['git', 'diff', '--name-only', '--diff-filter=ACM'],
-                capture_output=True, text=True, check=True
-            )
-            unstaged_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
-            
-            # Combine and deduplicate
-            all_files = list(set(staged_files + unstaged_files))
+            # Check if we're in GitHub Actions environment
+            if os.getenv('GITHUB_ACTIONS'):
+                # In GitHub Actions, compare with the previous commit
+                result = subprocess.run(
+                    ['git', 'diff', '--name-only', 'HEAD~1', 'HEAD', '--diff-filter=ACM'],
+                    capture_output=True, text=True, check=True
+                )
+                changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+            else:
+                # For local development, get staged and unstaged changes
+                # First try to get staged changes
+                result = subprocess.run(
+                    ['git', 'diff', '--cached', '--name-only', '--diff-filter=ACM'],
+                    capture_output=True, text=True, check=True
+                )
+                staged_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                
+                # Also get unstaged changes
+                result = subprocess.run(
+                    ['git', 'diff', '--name-only', '--diff-filter=ACM'],
+                    capture_output=True, text=True, check=True
+                )
+                unstaged_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                
+                # Combine and deduplicate
+                changed_files = list(set(staged_files + unstaged_files))
             
             # Filter for markdown files only
-            markdown_files = [f for f in all_files if f.endswith('.md')]
+            markdown_files = [f for f in changed_files if f.endswith('.md')]
             
             logger.info(f"Found {len(markdown_files)} changed markdown files: {markdown_files}")
             return markdown_files
             
-        except subprocess.CalledProcessError:
-            logger.warning("Could not get changed files from git")
+        except subprocess.CalledProcessError as e:
+            logger.warning(f"Could not get changed files from git: {e}")
             return []
     
     def find_corresponding_files(self, changed_file: str) -> List[Tuple[str, str, str, str]]:
@@ -493,6 +502,11 @@ class TranslationManager:
     def create_translation_branch(self, branch_name: str) -> bool:
         """Create a new branch for translations."""
         try:
+            # Configure git user for GitHub Actions
+            if os.getenv('GITHUB_ACTIONS'):
+                subprocess.run(['git', 'config', '--local', 'user.email', 'action@github.com'], check=True)
+                subprocess.run(['git', 'config', '--local', 'user.name', 'GitHub Action'], check=True)
+            
             # Get current branch
             result = subprocess.run(['git', 'branch', '--show-current'], 
                                   capture_output=True, text=True, check=True)
