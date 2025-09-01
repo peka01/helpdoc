@@ -33,7 +33,7 @@ A registration means that you show interest in joining. It's like 'reserving a s
 
 ## Manage your registrations
 
-### View your registrations
+### View your subscriptions
 - **Registration page**: Shows all trainings you are registered for
 - **Attendance view**: Shows the registration status of each training
 - **Overview**: You can clearly see which trainings you plan to attend
@@ -50,7 +50,7 @@ A registration means that you show interest in joining. It's like 'reserving a s
 - You can re-register if you wish
 - The place becomes available to others
 
-## Important rules
+## Rules that we want you to be aware of
 
 ### Registration vs attendance
 - **Registration is free**: You can register for as many trainings as you want
