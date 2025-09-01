@@ -12,7 +12,7 @@ Glöm komplicerade system och pappersarbete. Här är en enkel och smidig lösni
 - **Utdela stämpelkort**: Hantera kort för alla användare
 - **Följ vad som händer**: Visa statistik och rapporter
 ## Så här fungerar det
-Det är enkelt! Vi har tre huvuddelar:
+Det är enkelt! Vi har tre saker som vi tittar på:
 1. **Users** - Deltagare som vill gå med i utbildningar
 2. **Trainings** - Kurser och aktiviteter som användare kan delta i
 3. **Clipboard** - Det som används för att delta i utbildningar
