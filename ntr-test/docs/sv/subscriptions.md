@@ -18,7 +18,7 @@ En anmälan innebär att du visar intresse för att vara med. Det är som att "r
 ## Registrera dig för träningar
 
 ### Så här gör du
-1. Gå till **Registreringssidan**
+1. Gå till **Anmälningssidan**
 2. Bläddra bland de tillgängliga träningarna
 3. Läs beskrivningen av varje träning
 4. Klicka på **"Registrera dig"** bredvid den träning du vill delta i
