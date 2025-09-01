@@ -10,7 +10,7 @@ Registrera dig enkelt för träningar som intresserar dig. Det är det första s
 En anmälan innebär att du visar intresse av att delta i en träning. Det är som att "reservera en plats" – du visar intresse men förbinder dig inte till att faktiskt delta.
 
 ### Fördelarna med att registrera sig
-- **Gratis**: Det kostar inget att registrera sig för en voucher
+- **Gratis**: Det kostar inget att registrera sig för en träning hos oss
 - **Flexibilitet**: Du kan avsluta prenumerationen när som helst
 - **Överblick**: Du ser alla träningar som du är intresserad av
 - **Påminnelser**: Du kommer ihåg vilka träningar som är tillgängliga
