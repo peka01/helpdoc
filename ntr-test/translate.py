@@ -131,6 +131,36 @@ class TranslationManager:
             logger.error(f"Error reading file {file_path}: {e}")
             return "", {}
     
+    def get_changed_content(self, file_path: str) -> List[str]:
+        """Get only the changed lines from a file."""
+        try:
+            # Get the diff for this specific file
+            result = subprocess.run(
+                ['git', 'diff', 'HEAD~1', 'HEAD', '--', file_path],
+                capture_output=True, text=True, check=True
+            )
+            
+            if not result.stdout.strip():
+                logger.info(f"No changes detected in {file_path}")
+                return []
+            
+            # Parse the diff to extract changed lines
+            changed_lines = []
+            lines = result.stdout.split('\n')
+            
+            for line in lines:
+                # Look for lines that start with + (added lines)
+                if line.startswith('+') and not line.startswith('+++'):
+                    # Remove the + prefix and add to changed lines
+                    changed_lines.append(line[1:])
+            
+            logger.info(f"Found {len(changed_lines)} changed lines in {file_path}")
+            return changed_lines
+            
+        except subprocess.CalledProcessError as e:
+            logger.warning(f"Could not get diff for {file_path}: {e}")
+            return []
+    
     def translate_markdown_file(self, source_file: str, target_file: str, 
                               source_lang: str, target_lang: str) -> bool:
         """Translate a markdown file while preserving structure."""
@@ -146,32 +176,62 @@ class TranslationManager:
             logger.warning("DeepL API key not available. Skipping translation to avoid overwriting content.")
             return False
         
-        # Extract content and metadata
-        content, metadata = self.extract_markdown_content(source_file)
+        # Extract content and metadata from the source file
+        source_content, source_metadata = self.extract_markdown_content(source_file)
         
         # Check if content was successfully extracted
-        if not content:
+        if not source_content:
             logger.error(f"Could not extract content from {source_file}. Skipping translation.")
             return False
         
+        # Check if there are meaningful changes in the source file
+        try:
+            # Get the previous version of the source file
+            result = subprocess.run(
+                ['git', 'show', 'HEAD~1:' + source_file],
+                capture_output=True, text=True, check=True
+            )
+            previous_content = result.stdout
+            
+            # Compare current content with previous content
+            if source_content.strip() == previous_content.strip():
+                logger.info(f"No meaningful changes detected in {source_file}. Skipping translation.")
+                return False
+            else:
+                logger.info(f"Changes detected in {source_file}. Proceeding with translation.")
+        except subprocess.CalledProcessError:
+            # If we can't get the previous version, assume there are changes
+            logger.info(f"Could not compare with previous version of {source_file}. Proceeding with translation.")
+        
+        # Check if target file exists and compare content
+        target_exists = os.path.exists(target_file)
+        if target_exists:
+            target_content, target_metadata = self.extract_markdown_content(target_file)
+            
+            # If the target file already has the same content (after translation), skip
+            if target_content.strip() == source_content.strip():
+                logger.info(f"Target file {target_file} already has the same content. Skipping translation.")
+                return False
+        
         # Skip translation if content is too short (likely not meaningful)
-        if len(content.strip()) < 10:
-            logger.warning(f"Content too short to translate (length: {len(content.strip())}). Skipping translation.")
+        if len(source_content.strip()) < 10:
+            logger.warning(f"Content too short to translate (length: {len(source_content.strip())}). Skipping translation.")
             return False
         
-        # Translate content
-        translated_content = self.translate_text(content, target_lang, source_lang)
+        # Translate the entire content (this is the current approach)
+        logger.info(f"Translating entire content from {source_lang} to {target_lang}")
+        translated_content = self.translate_text(source_content, target_lang, source_lang)
         
         # Check if translation actually happened (content should be different)
-        if translated_content == content:
+        if translated_content == source_content:
             logger.warning("Translation returned original content. Skipping to avoid overwriting.")
             return False
         
         # Reconstruct file with metadata
         output_lines = []
-        if metadata:
+        if source_metadata:
             output_lines.append('---')
-            for key, value in metadata.items():
+            for key, value in source_metadata.items():
                 output_lines.append(f"{key}: {value}")
             output_lines.append('---')
             output_lines.append('')
@@ -186,10 +246,10 @@ class TranslationManager:
         try:
             with open(target_file, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(output_lines))
-            logger.info(f"Successfully translated to {target_file}")
+            logger.info(f"Successfully updated {target_file}")
             return True
         except Exception as e:
-            logger.error(f"Error writing translated file {target_file}: {e}")
+            logger.error(f"Error writing updated file {target_file}: {e}")
             return False
     
     def get_changed_files(self) -> List[str]:
