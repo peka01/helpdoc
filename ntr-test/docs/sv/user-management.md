@@ -87,5 +87,5 @@ Som administratör har du kontroll över användarna och deras hålkort. Här hi
 
 - Alla ändringar sparas automatiskt
 - Endast administratörer kan hantera hålkort
-- Användardata skyddas enligt regler för dataskydd
+- Användardata skyddas enligt reglerna för dataskydd
 - Säkerhetsuppdateringar görs automatiskt

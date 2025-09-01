@@ -34,7 +34,7 @@ Om du avbokar din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är
 
 ## Tips för att använda kort på ett smart sätt
 
-1. **Planera i förväg**: Anmäl dig till utbildning tidigt, men markera närvaro först när du är säker på att
+1. **Planera i förväg**: Anmäl dig till utbildning i god tid, men markera närvaro först när du är säker på att
 2. **Håll koll**: Kontrollera ditt saldo regelbundet
 3. **Avboka i tid**: Kan du inte komma? Avboka din närvaro så snart som möjligt
 4. **Begära mer**: Kontakta administratören innan det tar slut, inte efter
@@ -47,5 +47,5 @@ Nej, stämpelkort är personliga och kan inte delas.
 **Vad händer om jag markerar närvaro av misstag?
 Avboka närvaron omedelbart så får du tillbaka kortet.
 
-**Om jag missar ett utbildningstillfälle, får jag tillbaka mitt kort?
+**Om jag missar ett utbildningstillfälle, kan jag få tillbaka mitt kort?
 Bara om du har markerat närvaro och sedan avbrutit den. Har du aldrig markerat närvaro? Då kommer inget kort att användas.

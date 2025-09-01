@@ -37,7 +37,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 
 ### "Övningen visas inte i listan"
 
-**Symtom:** En övning som du förväntade dig att se finns inte i listan.
+**Symtom:** En övning som du förväntade dig att se finns inte med i listan.
 
 **Möjliga orsaker:**
 - Övningen har tagits bort av administratören
@@ -46,7 +46,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 - Problem med nätverket
 
 **Så här löser du det:**
-1. **Aktualisera sidan**
+1. **Aktualisera sidan
    - Tryck på F5 eller klicka på uppdateringsknappen
    - Vänta några sekunder
 
@@ -86,7 +86,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
    - Be administratören att kontrollera ditt saldo
    - De kan se det faktiska värdet i plattformen
 
-### "Det går inte att registrera sig för utbildning"
+### "Det är inte möjligt att registrera sig för utbildning"
 
 **Symtom:** Knappen "Registrera" fungerar inte eller ger ett felmeddelande.
 
@@ -143,7 +143,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 
 ### Vad du ska inkludera när du kontaktar administratören:
 - **Din e-postadress**: så att de kan identifiera ditt konto
-- **Beskrivning av problemet**: Vad som händer och vad du förväntar dig
+- **Beskrivning av problemet**: vad som händer och vad du förväntar dig
 - **Steg du har provat**: Lista vad du redan har försökt
 - **Felmeddelanden**: Kopiera eventuella felmeddelanden
 - **Webbläsare och enhet**: Vilken webbläsare och enhet du använder
@@ -151,7 +151,7 @@ Här hittar du hjälp med att lösa vanliga problem som kan uppstå när du anv�
 ## Förebyggande åtgärder
 
 ### För att undvika problem:
-1. **Aktualisera regelbundet**: Ladda om sidan när du märker att något verkar konstigt
+1. **Aktualisera regelbundet**: ladda om sidan när du märker att något verkar konstigt
 2. **Kontrollera saldot**: Kontrollera saldot på din voucher regelbundet
 3. **Registrera i tid**: Anmäl dig till utbildningar så snart du vet att du är intresserad
 4. **Markera närvaro när du är säker**: Vänta med att markera närvaro tills du är säker på att du kan delta

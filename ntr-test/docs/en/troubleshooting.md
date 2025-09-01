@@ -45,8 +45,8 @@ Here you will find help to solve common problems that may occur when using the p
 - The platform is still loading
 - Problem with the network
 
-**Here is how to solve it:**
-1. **Refresh the page**
+**Here's how to solve it:**
+1. **Refresh the page
    - Press F5 or click on the refresh button
    - Wait a few seconds
 
@@ -86,12 +86,12 @@ Here you will find help to solve common problems that may occur when using the p
    - Ask the administrator to check your balance
    - They can see the actual value in the platform
 
-### "Unable to register for training"
+### "It is not possible to register for training"
 
 **Symptoms:** The "Register" button does not work or gives an error message.
 
 **Possible causes:**
-- The training is full
+- The training is fully subscribed
 - The training has already started
 - You are already registered
 - Error on the platform
@@ -143,7 +143,7 @@ Here you will find help to solve common problems that may occur when using the p
 
 ### What to include when contacting the administrator:
 - **Your email address**: so they can identify your account
-- **Description of the problem**: What is happening and what you expect
+- **Description of the problem**: what is happening and what you expect
 - **Steps you have tried**: List what you have already tried
 - **Error messages**: Copy any error messages
 - **Browser and device**: What browser and device you are using
@@ -151,9 +151,9 @@ Here you will find help to solve common problems that may occur when using the p
 ## Preventive measures
 
 ### To avoid problems:
-1. **Refresh regularly**: Reload the page when you notice that something seems strange
+1. **Refresh regularly**: reload the page when you notice that something seems strange
 2. **Check the balance**: Check the balance of your voucher regularly
-3. **Register on time**: Register for training courses as soon as you know you are interested
+3. **Register on time**: Sign up for training courses as soon as you know you are interested
 4. **Mark attendance when you are sure**: Wait to mark attendance until you are sure you can attend
 
 ### Technical tips:

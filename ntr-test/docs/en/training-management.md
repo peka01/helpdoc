@@ -2,11 +2,11 @@
 
 ## Overview
 
-As an administrator, you are in control of the training offer. It contains everything you need to create, edit and manage training sessions in a simple and efficient way.
+As an administrator, you are in control of the training offer. It contains everything you need to create, edit and manage training events in a simple and efficient way.
 
-## Create new workouts
+## Create new training sessions
 
-### Here's how you do it
+### Here's how to do it
 1. Go to the **Admin** view
 2. Find "Create training"
 3. Fill in:
@@ -24,7 +24,7 @@ As an administrator, you are in control of the training offer. It contains every
 
 ### Here's how you do it
 1. Go to the **Admin** view
-2. Find the exercise in the list
+2. Locate the exercise in the list
 3. Click on the **edit icon** (pencil) next to the exercise
 4. Change the name and/or description
 5. Click on **"Save"**
@@ -44,10 +44,10 @@ As an administrator, you are in control of the training offer. It contains every
 
 ### Write good descriptions
 - **Learning objectives**: What will participants learn?
-- **Prerequisites**: What do they need to know beforehand?
+- **Prerequisites**: What do they need to know in advance?
 - **Time**: How long will it take?
 - **Format**: Practical, theoretical or both?
-- **Target group**: Who is it for?
+- **Target audience**: Who is it for?
 
 ### Example of a good description
 ```

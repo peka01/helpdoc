@@ -34,7 +34,7 @@ If you cancel your attendance, you get your card back immediately. It's that sim
 
 ## Tips for using cards in a smart way
 
-1. **Plan ahead**: Sign up for training early, but only mark attendance when you're sure
+1. **Plan ahead**: Sign up for training early, but only mark attendance when you are sure that
 2. **Keep track**: Check your balance regularly
 3. **Cancel on time**: Can't make it? Cancel your attendance as soon as possible
 4. **Request more**: Contact the administrator before it runs out, not after
@@ -47,5 +47,5 @@ No, punch cards are personal and cannot be shared.
 **What happens if I mark attendance by mistake?
 Cancel the attendance immediately and you will get the card back.
 
-**If I miss a training session, will I get my card back?
-Only if you marked attendance and then canceled it. Have you never marked attendance? Then no card will be used.
+**If I miss a training session, can I get my card back?
+Only if you have marked attendance and then canceled it. Have you never marked attendance? Then no card will be used.

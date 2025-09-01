@@ -2,9 +2,9 @@
 
 ## Översikt
 
-Som administratör har du kontroll över utbildningserbjudandet. Det innehåller allt du behöver för att skapa, redigera och hantera utbildningstillfällen på ett enkelt och effektivt sätt.
+Som administratör har du kontroll över utbildningserbjudandet. Den innehåller allt du behöver för att skapa, redigera och hantera utbildningstillfällen på ett enkelt och effektivt sätt.
 
-## Skapa nya träningspass
+## Skapa nya utbildningstillfällen
 
 ### Så här gör du
 1. Gå till vyn **Admin**
@@ -24,8 +24,8 @@ Som administratör har du kontroll över utbildningserbjudandet. Det innehåller
 
 ### Så här gör du
 1. Gå till vyn **Admin**
-2. Leta upp övningen i listan
-3. Klicka på **redigeringsikonen** (pennan) bredvid övningen
+2. Leta reda på övningen i listan
+3. Klicka på **redigera-ikonen** (penna) bredvid övningen
 4. Ändra namn och/eller beskrivning
 5. Klicka på **"Spara"**
 
