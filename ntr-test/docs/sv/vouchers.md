@@ -22,19 +22,19 @@ Som ny användare börjar du med 0 stämpelkort. Detta är helt normalt! Du komm
 
 ### Saldot kan inte bli negativt
 - Plattformen hindrar saldot från att gå under 0
-- Du kan inte markera närvaro utan minst ett kort
+- Du kan inte markera att du är närvarande utan minst ett kort
 
 ### Administratörer hanterar kort
 - Endast administratörer kan lägga till eller ta bort kort
 - Be om fler kort när du behöver dem
-- Administratörer ser alla användares saldon
+- Coacherna ser alla användares saldon
 
 ## Tips för att använda kort på ett smart sätt
 
 1. **Planera i förväg**: Anmäl dig till utbildning tidigt, men markera närvaro först när du är säker på att
 2. **Håll koll**: Kontrollera ditt saldo regelbundet
 3. **Avboka i tid**: Kan du inte komma? Avboka din närvaro så snart som möjligt
-4. **Begära mer**: Kontakta administratören innan det tar slut, inte efter
+4. **Begära mer**: Kontakta coacherna innan det tar slut, inte efter
 
 ## FAQ
 
