@@ -36,7 +36,7 @@ class TranslationManager:
         self.deepl_api_url = "https://api-free.deepl.com/v2/translate"
         
         if not self.deepl_api_key:
-            logger.warning("DEEPL_API_KEY environment variable not set. Translation will be simulated.")
+            logger.warning("DEEPL_API_KEY environment variable not set. Translation will be skipped.")
     
     def load_config(self) -> Dict:
         """Load the help configuration file."""
@@ -57,10 +57,6 @@ class TranslationManager:
     
     def translate_text(self, text: str, target_lang: str, source_lang: str = "EN") -> str:
         """Translate text using DeepL API."""
-        if not self.deepl_api_key:
-            logger.warning("DeepL API key not available. Returning original text.")
-            return text
-        
         try:
             response = requests.post(
                 self.deepl_api_url,
@@ -126,11 +122,31 @@ class TranslationManager:
         """Translate a markdown file while preserving structure."""
         logger.info(f"Translating {source_file} to {target_file}")
         
+        # Check if source file exists
+        if not os.path.exists(source_file):
+            logger.error(f"Source file {source_file} does not exist. Skipping translation.")
+            return False
+        
+        # Check if DeepL API key is available
+        if not self.deepl_api_key:
+            logger.warning("DeepL API key not available. Skipping translation to avoid overwriting content.")
+            return False
+        
         # Extract content and metadata
         content, metadata = self.extract_markdown_content(source_file)
         
+        # Check if content was successfully extracted
+        if not content:
+            logger.error(f"Could not extract content from {source_file}. Skipping translation.")
+            return False
+        
         # Translate content
         translated_content = self.translate_text(content, target_lang, source_lang)
+        
+        # Check if translation actually happened (content should be different)
+        if translated_content == content:
+            logger.warning("Translation returned original content. Skipping to avoid overwriting.")
+            return False
         
         # Reconstruct file with metadata
         output_lines = []
@@ -162,12 +178,23 @@ class TranslationManager:
         try:
             # Check if we're in GitHub Actions environment
             if os.getenv('GITHUB_ACTIONS'):
-                # In GitHub Actions, compare with the previous commit
-                result = subprocess.run(
-                    ['git', 'diff', '--name-only', 'HEAD~1', 'HEAD', '--diff-filter=ACM'],
-                    capture_output=True, text=True, check=True
-                )
-                changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                            # In GitHub Actions, compare with the previous commit
+            result = subprocess.run(
+                ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
+                capture_output=True, text=True, check=True
+            )
+            changed_files_raw = result.stdout.strip().split('\n') if result.stdout.strip() else []
+            
+            # Parse status and filename, only include added/modified files
+            changed_files = []
+            for line in changed_files_raw:
+                if line.strip():
+                    parts = line.split('\t')
+                    if len(parts) >= 2:
+                        status, filename = parts[0], parts[1]
+                        # Only include files that were added or modified (not deleted)
+                        if status in ['A', 'M']:
+                            changed_files.append(filename)
             else:
                 # For local development, get staged and unstaged changes
                 # First try to get staged changes
@@ -427,11 +454,24 @@ class TranslationManager:
         # Method 1: Try to get changes from the last commit
         try:
             result = subprocess.run(
-                ['git', 'diff', '--name-only', 'HEAD~1', 'HEAD'],
+                ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
                 capture_output=True, text=True, check=True
             )
-            changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
-            markdown_files = [f for f in changed_files if f.endswith('.md')]
+            changed_files_raw = result.stdout.strip().split('\n') if result.stdout.strip() else []
+            
+            # Parse status and filename
+            markdown_files = []
+            for line in changed_files_raw:
+                if line.strip() and line.endswith('.md'):
+                    parts = line.split('\t')
+                    if len(parts) >= 2:
+                        status, filename = parts[0], parts[1]
+                        # Only include files that were added or modified (not deleted)
+                        if status in ['A', 'M']:
+                            markdown_files.append(filename)
+                        else:
+                            logger.info(f"Skipping {filename} (status: {status})")
+            
             logger.info(f"Method 1 - Changed markdown files from last commit: {markdown_files}")
         except subprocess.CalledProcessError:
             logger.warning("Method 1 failed - could not get changes from last commit")
@@ -482,6 +522,7 @@ class TranslationManager:
         # Get language configurations
         language_configs = self.get_language_configs()
         success = True
+        translated_files = []
         
         # For each changed file, find its counterpart and translate
         for changed_file in markdown_files:
@@ -527,6 +568,11 @@ class TranslationManager:
             
             logger.info(f"Processing changed file: {changed_file} (language: {source_lang}, section: {source_section})")
             
+            # Check if the changed file actually exists
+            if not os.path.exists(changed_file):
+                logger.warning(f"Changed file {changed_file} does not exist in filesystem. Skipping translation.")
+                continue
+            
             # Find the corresponding file in the OTHER language
             for target_lang_code, target_config in language_configs.items():
                 if target_lang_code != source_lang:  # Only translate to OTHER language
@@ -537,39 +583,31 @@ class TranslationManager:
                         
                         logger.info(f"Translating {changed_file} ({source_code}) → {target_file} ({target_code})")
                         
-                        if not self.translate_markdown_file(changed_file, target_file, source_code, target_code):
+                        if self.translate_markdown_file(changed_file, target_file, source_code, target_code):
+                            translated_files.append(target_file)
+                        else:
                             success = False
         
-        if success and markdown_files:
+        if translated_files and success:
             # Create a new branch for translations
             branch_name = f"auto-translate-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
             if not self.create_translation_branch(branch_name):
                 logger.error("Failed to create translation branch")
                 return False
             
-            # Get all translated files by checking what files were modified
-            translated_files = []
-            for changed_file in markdown_files:
-                # Find corresponding files that should have been translated
-                translations = self.find_corresponding_files(changed_file)
-                for source_file, target_file, source_lang, target_lang in translations:
-                    if os.path.exists(target_file):
-                        translated_files.append(target_file)
-            
-            if translated_files:
-                # Commit translated files
-                if self.commit_translations(translated_files, branch_name):
-                    # Create pull request
-                    if self.create_pull_request(branch_name, translated_files):
-                        logger.info(f"Pull request created for branch: {branch_name}")
-                    else:
-                        logger.error("Failed to create pull request")
-                        success = False
+            # Commit translated files
+            if self.commit_translations(translated_files, branch_name):
+                # Create pull request
+                if self.create_pull_request(branch_name, translated_files):
+                    logger.info(f"Pull request created for branch: {branch_name}")
                 else:
-                    logger.error("Failed to commit translations")
+                    logger.error("Failed to create pull request")
                     success = False
             else:
-                logger.info("No files were translated, skipping PR creation")
+                logger.error("Failed to commit translations")
+                success = False
+        else:
+            logger.info("No files were actually translated, skipping PR creation")
         
         if success:
             logger.info("Smart translation completed successfully")

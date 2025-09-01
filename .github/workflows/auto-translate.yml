@@ -57,6 +57,14 @@ jobs:
         echo "Git log --oneline -5:"
         git log --oneline -5
         echo "Running translation script..."
+        echo "Checking if detected files actually exist:"
+        git diff --name-status HEAD~1 HEAD | grep '\.md$' | while read status file; do
+          if [ -f "$file" ]; then
+            echo "  ✓ $file exists ($status)"
+          else
+            echo "  ✗ $file does not exist ($status)"
+          fi
+        done
         python translate.py --mode smart-translate
     
 
