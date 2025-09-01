@@ -2,17 +2,17 @@
 
 ## Overview
 
-As an administrator, you have control over users and their punch cards. Here's everything you need to manage users easily and efficiently.
+As an administrator, you have control over users and their punch cards. Here you will find everything you need to manage users in a simple and efficient way.
 
 ## Create new users
 
 ### Here's how you do it
 1. Go to the **Admin** view
-2. Find "Create Users"
+2. Find "Create user"
 3. Fill in:
-   - **Full name**: User's name (first name and last name)
+   - **Full name**: The user's name (first name and last name)
    - **E-mail address**: An e-mail address that is not already in use
-4. Click **"Create User"**
+4. Click on **"Create user"**
 
 ### What happens next?
 - The user is created directly
@@ -25,18 +25,18 @@ As an administrator, you have control over users and their punch cards. Here's e
 ### Adding cards
 1. Find the user in the list
 2. Look for their current balance
-3. Click **"+"** next to the balance
-4. A card will be added instantly
+3. Click on **"+"** next to the balance
+4. A card will be added immediately
 
-### Remove card
+### Remove the card
 1. Find the user in the list
-2. Click **"-"** next to the balance
+2. Click on **"-"** next to the balance
 3. A card is deleted (only if the balance is above 0)
 
 ### Important to remember
 - You cannot delete more cards than the user has
 - Changes are visible immediately
-- All changes are saved for future reference
+- All changes are saved for future use
 
 ## User overview
 
@@ -53,30 +53,30 @@ As an administrator, you have control over users and their punch cards. Here's e
 
 ## Tips for administrators
 
-### Manage punch cards smartly
+### Manage punch cards in a smart way
 - **Set clear rules**: Decide how many cards different users should have
 - **Keep track**: See who is using their cards quickly
-- **Hand out regularly**: Consider handing out cards regularly instead of all at once
+- **Hand out regularly**: Consider handing out the cards regularly instead of all at once
 
 ### Communicate with users
 - **Explain how it works**: Make sure users understand the voucher system
-- **Clear rules**: Clearly explain when and how cards can be used
-- **Be accessible**: Answer questions about cards and the platform
+- **Clear rules**: Explain clearly when and how the cards can be used
+- **Be accessible**: Answer questions about the cards and the platform
 
 ### Manage efficiently
 - **Large groups**: Too many users, create them in groups
 - **Check regularly**: Check users and cards regularly
-- **Save important info**: Keep track of important user data
+- **Save important information**: Keep track of important user data
 
 ## Troubleshooting
 
 ### Common problems
 **User cannot log in**
 - Check that the email address is correct
-- Make sure the user has not been deleted
+- Check that the user has not been deleted
 
 **Clipcards are not displayed correctly**
-- Refresh the page to see latest changes
+- Refresh the page to see the latest changes
 - Check that you have the correct permissions
 
 **Cannot create user**
@@ -88,4 +88,4 @@ As an administrator, you have control over users and their punch cards. Here's e
 - All changes are automatically saved
 - Only administrators can manage punch cards
 - User data is protected according to data protection rules
-- Security updates are made automatically
+- Security updates are done automatically

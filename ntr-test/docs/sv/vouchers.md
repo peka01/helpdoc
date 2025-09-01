@@ -2,7 +2,7 @@
 
 ## Vad är ett hålkort?
 
-Tänk på klippkort som biljetter till utbildningar - enkelt och tydligt. Varje utbildningstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över utbildningsanvändningen.
+Tänk på klippkort som biljetter till träningstillfällen - enkelt och tydligt. Varje utbildningstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
 
 ## Så här fungerar det
 
@@ -13,8 +13,8 @@ Som ny användare börjar du med 0 stämpelkort. Detta är helt normalt! Du komm
 - **Registrera dig gratis**: Registrera dig för så många utbildningar du vill - inget kort används
 - **Närvaro kostar**: Ett kort dras endast när du faktiskt markerar närvaro
 
-### Få tillbaka kortet
-Om du avbryter din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är det!
+### Få tillbaka ditt kort
+Om du avbokar din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är det!
 
 ## Viktiga regler
 
@@ -34,7 +34,7 @@ Om du avbryter din närvaro får du tillbaka ditt kort omedelbart. Så enkelt ä
 
 ## Tips för att använda kort på ett smart sätt
 
-1. **Planera i förväg**: Anmäl dig till utbildning tidigt, men markera närvaro först när du är säker på att
+1. **Planera i förväg**: Anmäl dig till utbildning i god tid, men markera närvaro först när du är säker på att
 2. **Håll koll**: Kontrollera ditt saldo regelbundet
 3. **Avboka i tid**: Kan du inte komma? Avboka din närvaro så snart som möjligt
 4. **Begära mer**: Kontakta administratören innan det tar slut, inte efter
@@ -42,10 +42,10 @@ Om du avbryter din närvaro får du tillbaka ditt kort omedelbart. Så enkelt ä
 ## Ofta ställda frågor
 
 **Kan jag använda någon annans stämpelkort?
-Nej, hålkort är personliga och kan inte delas.
+Nej, stämpelkort är personliga och kan inte delas.
 
 **Vad händer om jag markerar närvaro av misstag?
 Avboka närvaron omedelbart så får du tillbaka kortet.
 
 **Om jag missar ett utbildningstillfälle, får jag tillbaka mitt kort?
-Bara om du markerat närvaro och sedan avbrutit den. Har du aldrig markerat närvaro? Då kommer inget kort att användas.
+Bara om du har markerat närvaro och sedan avbrutit den. Har du aldrig markerat närvaro? Då kommer inget kort att användas.
