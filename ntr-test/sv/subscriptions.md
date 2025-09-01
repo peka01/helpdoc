@@ -1,4 +1,4 @@
-# Träningsanmälningar - Anmäl dig till träningar
+# Träningsanmälningar - Anmäl Per till träningar
 
 ## Översikt
 
