@@ -1,6 +1,6 @@
-# Clip card - Your ticket to training sessions
+# The training card - Your ticket to training sessions
 
-## What is a punch card?
+## What is a training card?
 
 Think of clip cards as tickets to training sessions - simple and clear. Each training session costs one card. It makes it easy to keep track of who's coming to what and gives you control over training usage.
 
