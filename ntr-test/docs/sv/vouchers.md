@@ -1,8 +1,8 @@
-# Clip card - Din biljett till utbildningstillfällen
+# Träningskortet- Din biljett till träningstillfällena
 
-## Vad är ett hålkort?
+## Vad är ett träningskort?
 
-Tänk på klippkort som biljetter till träningstillfällen - enkelt och tydligt. Varje utbildningstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
+Tänk på träningskort som biljetter till träningstillfällen - enkelt och tydligt. Varje träningsstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
 
 ## Så här fungerar det
 
