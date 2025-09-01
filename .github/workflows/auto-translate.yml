@@ -33,7 +33,7 @@ jobs:
         DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
       run: |
         cd ntr-test
-        python translate.py --mode sync-all
+        python translate.py --mode smart-translate
     
     - name: Create PR if changes exist
       if: failure() == false
@@ -45,6 +45,9 @@ jobs:
           exit 0
         fi
         
+        # Get the changed files for the PR title
+        CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep '\.md$' | head -3 | sed 's/ntr-test\/docs\///g' | sed 's/\.md$//g' | tr '\n' ', ' | sed 's/, $//')
+        
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
@@ -55,7 +58,7 @@ jobs:
         git push origin $BRANCH_NAME
         
         gh pr create \
-          --title "Translation needed - content update" \
+          --title "Translation needed - content update: $CHANGED_FILES" \
           --body "Automatic translation update for documentation changes." \
           --base main \
           --head $BRANCH_NAME
