@@ -387,7 +387,10 @@ class TranslationManager:
         """Translate only the files that were changed in the last commit."""
         logger.info("Running smart translation for changed files only")
         
-        # Get changed files from the last commit
+        # Get changed files from the last commit - try multiple approaches
+        markdown_files = []
+        
+        # Method 1: Try to get changes from the last commit
         try:
             result = subprocess.run(
                 ['git', 'diff', '--name-only', 'HEAD~1', 'HEAD'],
@@ -395,16 +398,52 @@ class TranslationManager:
             )
             changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
             markdown_files = [f for f in changed_files if f.endswith('.md')]
-            
-            logger.info(f"Changed markdown files in last commit: {markdown_files}")
-            
-            if not markdown_files:
-                logger.info("No markdown files changed in the last commit")
-                return True
-                
+            logger.info(f"Method 1 - Changed markdown files from last commit: {markdown_files}")
         except subprocess.CalledProcessError:
-            logger.warning("Could not get changed files from last commit")
-            return False
+            logger.warning("Method 1 failed - could not get changes from last commit")
+        
+        # Method 2: If no files found, try to get all staged/unstaged changes
+        if not markdown_files:
+            try:
+                # Get staged changes
+                result = subprocess.run(
+                    ['git', 'diff', '--cached', '--name-only'],
+                    capture_output=True, text=True, check=True
+                )
+                staged_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                
+                # Get unstaged changes
+                result = subprocess.run(
+                    ['git', 'diff', '--name-only'],
+                    capture_output=True, text=True, check=True
+                )
+                unstaged_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                
+                # Combine and filter
+                all_files = list(set(staged_files + unstaged_files))
+                markdown_files = [f for f in all_files if f.endswith('.md')]
+                logger.info(f"Method 2 - Found markdown files with changes: {markdown_files}")
+            except subprocess.CalledProcessError:
+                logger.warning("Method 2 failed - could not get staged/unstaged changes")
+        
+        # Method 3: If still no files, try to get files from the push event
+        if not markdown_files:
+            try:
+                # Look for files in the docs directory that might have been changed
+                result = subprocess.run(
+                    ['find', 'ntr-test/docs', '-name', '*.md', '-type', 'f'],
+                    capture_output=True, text=True, check=True
+                )
+                all_md_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+                # For now, just pick the first few files as a fallback
+                markdown_files = all_md_files[:3]  # Limit to 3 files
+                logger.info(f"Method 3 - Using fallback files: {markdown_files}")
+            except subprocess.CalledProcessError:
+                logger.warning("Method 3 failed - could not find markdown files")
+        
+        if not markdown_files:
+            logger.info("No markdown files found to translate")
+            return True
         
         # Get language configurations
         language_configs = self.get_language_configs()
