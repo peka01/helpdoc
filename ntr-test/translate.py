@@ -317,6 +317,38 @@ class TranslationManager:
     def sync_all_files(self) -> bool:
         """Sync all files between all languages (bidirectional)."""
         language_configs = self.get_language_configs()
+        success = True
+        
+        # Get all language codes
+        lang_codes = list(language_configs.keys())
+        
+        # For each language, sync to all other languages
+        for source_lang_code in lang_codes:
+            source_config = language_configs.get(source_lang_code)
+            if not source_config:
+                logger.warning(f"Source language configuration not found for {source_lang_code}")
+                continue
+            
+            logger.info(f"Syncing files from {source_lang_code} to other languages...")
+            
+            for section, source_file in source_config.get('file_paths', {}).items():
+                if not os.path.exists(source_file):
+                    logger.warning(f"Source file {source_file} not found, skipping")
+                    continue
+                
+                # Find translations to all other languages
+                for target_lang_code in lang_codes:
+                    if target_lang_code != source_lang_code:
+                        target_config = language_configs.get(target_lang_code)
+                        if target_config:
+                            target_file = target_config.get('file_paths', {}).get(section)
+                            if target_file:
+                                source_code = source_config['code'].upper()
+                                target_code = target_config['code'].upper()
+                                if not self.translate_markdown_file(source_file, target_file, source_code, target_code):
+                                    success = False
+        
+        return success
         
     def run_github_actions_workflow(self) -> bool:
         """Run the translation workflow specifically for GitHub Actions."""
@@ -349,38 +381,6 @@ class TranslationManager:
         else:
             logger.error("GitHub Actions translation workflow failed")
             
-        return success
-        success = True
-        
-        # Get all language codes
-        lang_codes = list(language_configs.keys())
-        
-        # For each language, sync to all other languages
-        for source_lang_code in lang_codes:
-            source_config = language_configs.get(source_lang_code)
-            if not source_config:
-                logger.warning(f"Source language configuration not found for {source_lang_code}")
-                continue
-            
-            logger.info(f"Syncing files from {source_lang_code} to other languages...")
-            
-            for section, source_file in source_config.get('file_paths', {}).items():
-                if not os.path.exists(source_file):
-                    logger.warning(f"Source file {source_file} not found, skipping")
-                    continue
-                
-                # Find translations to all other languages
-                for target_lang_code in lang_codes:
-                    if target_lang_code != source_lang_code:
-                        target_config = language_configs.get(target_lang_code)
-                        if target_config:
-                            target_file = target_config.get('file_paths', {}).get(section)
-                            if target_file:
-                                source_code = source_config['code'].upper()
-                                target_code = target_config['code'].upper()
-                                if not self.translate_markdown_file(source_file, target_file, source_code, target_code):
-                                    success = False
-        
         return success
     
     def create_translation_branch(self, branch_name: str) -> bool:
