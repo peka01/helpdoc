@@ -4,13 +4,13 @@
 
 Registrera dig enkelt för träningar som intresserar dig. Det är det första steget - att registrera sig är gratis och gör att du kan delta när det är dags.
 
-## Hur saker och ting fungerar
+## Hur träningsanmälan fungerar
 
-### Vad är en registrering?
-En registrering innebär att du visar intresse för att vara med. Det är som att "reservera en plats" - du visar intresse men förbinder dig inte att faktiskt delta.
+### Vad är en anmälan?
+En anmälan innebär att du visar intresse för att vara med. Det är som att "reservera en plats" - du visar intresse men förbinder dig inte att faktiskt delta.
 
-### Fördelarna med att registrera sig
-- **Gratis**: Det kostar inget att registrera sig för en träning hos oss
+### Fördelarna med att anmäla sig
+- **Gratis**: Det kostar inget att anmäla sig för en träning hos oss
 - **Flexibilitet**: Du kan avregistrera dig när som helst
 - **Överblick**: Du ser alla träningar som du är intresserad av
 - **Påminnelser**: Du kommer ihåg vilka träningar som är tillgängliga
