@@ -1,0 +1,40 @@
+{
+  "translation": {
+    "provider": "deepl",
+    "api_settings": {
+      "deepl": {
+        "api_url": "https://api-free.deepl.com/v2/translate",
+        "timeout": 30,
+        "preserve_formatting": true
+      }
+    },
+    "languages": {
+      "bidirectional": true,
+      "supported_languages": ["en-se", "sv-se"],
+      "default_source": "en-se"
+    },
+    "file_patterns": {
+      "include": ["*.md"],
+      "exclude": ["node_modules/**", "site/**", ".git/**"]
+    },
+    "translation_options": {
+      "preserve_metadata": true,
+      "preserve_links": true,
+      "preserve_code_blocks": true,
+      "preserve_images": true
+    },
+    "git_integration": {
+      "create_pull_requests": true,
+      "pre_commit_hook": true,
+      "branch_name_template": "auto-translate-{timestamp}",
+      "pr_title_template": "Auto-translate: Update {count} documentation files",
+      "review_required": true
+    },
+    "logging": {
+      "level": "INFO",
+      "file": "translation.log",
+      "max_size_mb": 10,
+      "backup_count": 5
+    }
+  }
+}

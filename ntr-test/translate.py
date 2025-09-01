@@ -1,0 +1,508 @@
+#!/usr/bin/env python3
+"""
+Automated Translation Script for NTR Documentation
+Handles translation between English and Swedish using DeepL API
+"""
+
+import os
+import sys
+import json
+import argparse
+import subprocess
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+import requests
+from datetime import datetime
+import logging
+import tempfile
+import shutil
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('translation.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+class TranslationManager:
+    def __init__(self, config_path: str = "help-config.json"):
+        self.config_path = config_path
+        self.config = self.load_config()
+        self.deepl_api_key = os.getenv('DEEPL_API_KEY')
+        self.deepl_api_url = "https://api-free.deepl.com/v2/translate"
+        
+        if not self.deepl_api_key:
+            logger.warning("DEEPL_API_KEY environment variable not set. Translation will be simulated.")
+    
+    def load_config(self) -> Dict:
+        """Load the help configuration file."""
+        try:
+            with open(self.config_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            logger.error(f"Configuration file {self.config_path} not found.")
+            sys.exit(1)
+        except json.JSONDecodeError:
+            logger.error(f"Invalid JSON in {self.config_path}")
+            sys.exit(1)
+    
+    def get_language_configs(self) -> Dict:
+        """Get language configurations from the config file."""
+        app_config = self.config.get('apps', {}).get('ntr-app', {})
+        return app_config.get('locales', {})
+    
+    def translate_text(self, text: str, target_lang: str, source_lang: str = "EN") -> str:
+        """Translate text using DeepL API."""
+        if not self.deepl_api_key:
+            logger.warning("DeepL API key not available. Returning original text.")
+            return text
+        
+        try:
+            response = requests.post(
+                self.deepl_api_url,
+                headers={
+                    'Authorization': f'DeepL-Auth-Key {self.deepl_api_key}',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data={
+                    'text': text,
+                    'source_lang': source_lang,
+                    'target_lang': target_lang,
+                    'preserve_formatting': '1'
+                },
+                timeout=30
+            )
+            
+            if response.status_code == 200:
+                result = response.json()
+                return result['translations'][0]['text']
+            else:
+                logger.error(f"DeepL API error: {response.status_code} - {response.text}")
+                return text
+                
+        except Exception as e:
+            logger.error(f"Translation error: {e}")
+            return text
+    
+    def extract_markdown_content(self, file_path: str) -> Tuple[str, Dict]:
+        """Extract content and metadata from markdown file."""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Split frontmatter and content
+            lines = content.split('\n')
+            metadata = {}
+            content_lines = []
+            in_frontmatter = False
+            
+            for line in lines:
+                if line.strip() == '---':
+                    if not in_frontmatter:
+                        in_frontmatter = True
+                    else:
+                        in_frontmatter = False
+                    continue
+                
+                if in_frontmatter:
+                    if ':' in line:
+                        key, value = line.split(':', 1)
+                        metadata[key.strip()] = value.strip()
+                else:
+                    content_lines.append(line)
+            
+            return '\n'.join(content_lines), metadata
+            
+        except Exception as e:
+            logger.error(f"Error reading file {file_path}: {e}")
+            return "", {}
+    
+    def translate_markdown_file(self, source_file: str, target_file: str, 
+                              source_lang: str, target_lang: str) -> bool:
+        """Translate a markdown file while preserving structure."""
+        logger.info(f"Translating {source_file} to {target_file}")
+        
+        # Extract content and metadata
+        content, metadata = self.extract_markdown_content(source_file)
+        
+        # Translate content
+        translated_content = self.translate_text(content, target_lang, source_lang)
+        
+        # Reconstruct file with metadata
+        output_lines = []
+        if metadata:
+            output_lines.append('---')
+            for key, value in metadata.items():
+                output_lines.append(f"{key}: {value}")
+            output_lines.append('---')
+            output_lines.append('')
+        
+        output_lines.append(translated_content)
+        
+        # Ensure target directory exists
+        target_dir = os.path.dirname(target_file)
+        os.makedirs(target_dir, exist_ok=True)
+        
+        # Write translated file
+        try:
+            with open(target_file, 'w', encoding='utf-8') as f:
+                f.write('\n'.join(output_lines))
+            logger.info(f"Successfully translated to {target_file}")
+            return True
+        except Exception as e:
+            logger.error(f"Error writing translated file {target_file}: {e}")
+            return False
+    
+    def get_changed_files(self) -> List[str]:
+        """Get list of changed files from git."""
+        try:
+            result = subprocess.run(
+                ['git', 'diff', '--cached', '--name-only', '--diff-filter=ACM'],
+                capture_output=True, text=True, check=True
+            )
+            return result.stdout.strip().split('\n') if result.stdout.strip() else []
+        except subprocess.CalledProcessError:
+            logger.warning("Could not get changed files from git")
+            return []
+    
+    def find_corresponding_files(self, changed_file: str) -> List[Tuple[str, str, str, str]]:
+        """Find corresponding files in other languages for translation."""
+        language_configs = self.get_language_configs()
+        translations = []
+        
+        # Determine which language the changed file belongs to
+        source_lang = None
+        source_section = None
+        
+        for lang_code, lang_config in language_configs.items():
+            for section, file_path in lang_config.get('file_paths', {}).items():
+                if file_path == changed_file:
+                    source_lang = lang_code
+                    source_section = section
+                    break
+            if source_lang:
+                break
+        
+        if not source_lang:
+            logger.warning(f"Could not determine language for {changed_file}")
+            return []
+        
+        # Find corresponding files in ALL other languages (bidirectional translation)
+        for lang_code, lang_config in language_configs.items():
+            if lang_code != source_lang:
+                target_file = lang_config.get('file_paths', {}).get(source_section)
+                if target_file:
+                    source_lang_code = language_configs[source_lang]['code'].upper()
+                    target_lang_code = lang_config['code'].upper()
+                    translations.append((
+                        changed_file, target_file, source_lang_code, target_lang_code
+                    ))
+        
+        return translations
+    
+    def translate_changed_files(self) -> bool:
+        """Translate all changed files to other languages and create pull request."""
+        changed_files = self.get_changed_files()
+        if not changed_files:
+            logger.info("No changed files detected")
+            return True
+        
+        logger.info(f"Found {len(changed_files)} changed files")
+        
+        # Create a new branch for translations
+        branch_name = f"auto-translate-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+        if not self.create_translation_branch(branch_name):
+            logger.error("Failed to create translation branch")
+            return False
+        
+        success = True
+        translated_files = []
+        
+        for changed_file in changed_files:
+            if not changed_file.endswith('.md'):
+                continue
+                
+            translations = self.find_corresponding_files(changed_file)
+            for source_file, target_file, source_lang, target_lang in translations:
+                if self.translate_markdown_file(source_file, target_file, source_lang, target_lang):
+                    translated_files.append(target_file)
+                else:
+                    success = False
+        
+        if translated_files and success:
+            # Commit translated files
+            if self.commit_translations(translated_files, branch_name):
+                # Create pull request
+                if self.create_pull_request(branch_name, translated_files):
+                    logger.info(f"Pull request created for branch: {branch_name}")
+                else:
+                    logger.error("Failed to create pull request")
+                    success = False
+            else:
+                logger.error("Failed to commit translations")
+                success = False
+        
+        return success
+    
+    def translate_specific_file(self, source_file: str, target_lang: str, 
+                              source_lang: str = "EN") -> bool:
+        """Translate a specific file to a target language."""
+        if not os.path.exists(source_file):
+            logger.error(f"Source file {source_file} not found")
+            return False
+        
+        # Generate target filename
+        source_path = Path(source_file)
+        target_file = str(source_path.parent / f"{source_path.stem}_{target_lang.lower()}{source_path.suffix}")
+        
+        return self.translate_markdown_file(source_file, target_file, source_lang, target_lang)
+    
+    def translate_between_languages(self, source_lang: str, target_lang: str) -> bool:
+        """Translate all files from one language to another."""
+        language_configs = self.get_language_configs()
+        
+        source_config = language_configs.get(source_lang)
+        target_config = language_configs.get(target_lang)
+        
+        if not source_config or not target_config:
+            logger.error(f"Language configuration not found for {source_lang} or {target_lang}")
+            return False
+        
+        success = True
+        translated_files = []
+        
+        for section, source_file in source_config.get('file_paths', {}).items():
+            if not os.path.exists(source_file):
+                logger.warning(f"Source file {source_file} not found, skipping")
+                continue
+            
+            target_file = target_config.get('file_paths', {}).get(section)
+            if target_file:
+                source_code = source_config['code'].upper()
+                target_code = target_config['code'].upper()
+                
+                if self.translate_markdown_file(source_file, target_file, source_code, target_code):
+                    translated_files.append(target_file)
+                else:
+                    success = False
+        
+        if translated_files:
+            logger.info(f"Successfully translated {len(translated_files)} files from {source_lang} to {target_lang}")
+        
+        return success
+    
+    def sync_all_files(self) -> bool:
+        """Sync all files between all languages (bidirectional)."""
+        language_configs = self.get_language_configs()
+        success = True
+        
+        # Get all language codes
+        lang_codes = list(language_configs.keys())
+        
+        # For each language, sync to all other languages
+        for source_lang_code in lang_codes:
+            source_config = language_configs.get(source_lang_code)
+            if not source_config:
+                logger.warning(f"Source language configuration not found for {source_lang_code}")
+                continue
+            
+            logger.info(f"Syncing files from {source_lang_code} to other languages...")
+            
+            for section, source_file in source_config.get('file_paths', {}).items():
+                if not os.path.exists(source_file):
+                    logger.warning(f"Source file {source_file} not found, skipping")
+                    continue
+                
+                # Find translations to all other languages
+                for target_lang_code in lang_codes:
+                    if target_lang_code != source_lang_code:
+                        target_config = language_configs.get(target_lang_code)
+                        if target_config:
+                            target_file = target_config.get('file_paths', {}).get(section)
+                            if target_file:
+                                source_code = source_config['code'].upper()
+                                target_code = target_config['code'].upper()
+                                if not self.translate_markdown_file(source_file, target_file, source_code, target_code):
+                                    success = False
+        
+        return success
+    
+    def create_translation_branch(self, branch_name: str) -> bool:
+        """Create a new branch for translations."""
+        try:
+            # Get current branch
+            result = subprocess.run(['git', 'branch', '--show-current'], 
+                                  capture_output=True, text=True, check=True)
+            current_branch = result.stdout.strip()
+            
+            # Create and checkout new branch
+            subprocess.run(['git', 'checkout', '-b', branch_name], check=True)
+            logger.info(f"Created and switched to branch: {branch_name}")
+            return True
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Failed to create branch {branch_name}: {e}")
+            return False
+    
+    def commit_translations(self, translated_files: List[str], branch_name: str) -> bool:
+        """Commit translated files to the current branch."""
+        try:
+            # Add all translated files
+            for file_path in translated_files:
+                subprocess.run(['git', 'add', file_path], check=True)
+            
+            # Create commit message
+            commit_message = f"Auto-translate: Update {len(translated_files)} files\n\n"
+            commit_message += "Translated files:\n"
+            for file_path in translated_files:
+                commit_message += f"- {file_path}\n"
+            commit_message += f"\nBranch: {branch_name}"
+            
+            # Commit
+            subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+            logger.info(f"Committed {len(translated_files)} translated files")
+            return True
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Failed to commit translations: {e}")
+            return False
+    
+    def create_pull_request(self, branch_name: str, translated_files: List[str]) -> bool:
+        """Create a pull request for the translation changes."""
+        try:
+            # Get repository info
+            result = subprocess.run(['git', 'remote', 'get-url', 'origin'], 
+                                  capture_output=True, text=True, check=True)
+            remote_url = result.stdout.strip()
+            
+            # Extract owner and repo from remote URL
+            if 'github.com' in remote_url:
+                # Handle both SSH and HTTPS URLs
+                if remote_url.startswith('git@github.com:'):
+                    repo_path = remote_url.replace('git@github.com:', '').replace('.git', '')
+                else:
+                    repo_path = remote_url.replace('https://github.com/', '').replace('.git', '')
+                
+                owner, repo = repo_path.split('/', 1)
+                
+                # Create PR title and body
+                pr_title = f"Auto-translate: Update {len(translated_files)} documentation files"
+                pr_body = f"""## Automated Translation Update
+
+This pull request contains automated translations for the following files:
+
+### Translated Files:
+"""
+                for file_path in translated_files:
+                    pr_body += f"- `{file_path}`\n"
+                
+                pr_body += f"""
+### Details:
+- **Branch**: `{branch_name}`
+- **Translation Provider**: DeepL API
+- **Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+### Review Instructions:
+1. Review the translated content for accuracy
+2. Check that formatting and links are preserved
+3. Verify that the translations maintain the original meaning
+4. Approve and merge if satisfied
+
+### Note:
+This PR was automatically generated by the translation system. Please review the changes before merging.
+"""
+                
+                # Use GitHub CLI if available, otherwise provide instructions
+                try:
+                    subprocess.run(['gh', '--version'], capture_output=True, check=True)
+                    # Create PR using GitHub CLI
+                    subprocess.run([
+                        'gh', 'pr', 'create',
+                        '--title', pr_title,
+                        '--body', pr_body,
+                        '--base', 'main'
+                    ], check=True)
+                    logger.info("Pull request created using GitHub CLI")
+                    return True
+                except (subprocess.CalledProcessError, FileNotFoundError):
+                    # GitHub CLI not available, provide manual instructions
+                    logger.info("GitHub CLI not available. Please create PR manually:")
+                    logger.info(f"Repository: {owner}/{repo}")
+                    logger.info(f"Branch: {branch_name}")
+                    logger.info(f"Title: {pr_title}")
+                    logger.info(f"Body: {pr_body}")
+                    
+                    # Create a PR template file
+                    pr_template = f"""# Pull Request Template
+
+## Title
+{pr_title}
+
+## Body
+{pr_body}
+
+## Manual Steps
+1. Go to: https://github.com/{owner}/{repo}/compare/main...{branch_name}
+2. Click "Create pull request"
+3. Copy the title and body above
+4. Submit the PR
+
+## Files Changed
+{chr(10).join(f"- {f}" for f in translated_files)}
+"""
+                    
+                    with open(f"PR_TEMPLATE_{branch_name}.md", 'w', encoding='utf-8') as f:
+                        f.write(pr_template)
+                    
+                    logger.info(f"PR template saved to: PR_TEMPLATE_{branch_name}.md")
+                    return True
+            else:
+                logger.warning("GitHub repository not detected. Please create PR manually.")
+                return False
+                
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Failed to create pull request: {e}")
+            return False
+
+def main():
+    parser = argparse.ArgumentParser(description="Automated Translation for NTR Documentation")
+    parser.add_argument('--config', default='help-config.json', help='Configuration file path')
+    parser.add_argument('--mode', choices=['git-hook', 'sync-all', 'translate-file', 'translate-lang'], 
+                       default='git-hook', help='Translation mode')
+    parser.add_argument('--source-file', help='Source file to translate (for translate-file mode)')
+    parser.add_argument('--target-lang', help='Target language code (for translate-file/translate-lang modes)')
+    parser.add_argument('--source-lang', default='EN', help='Source language code (for translate-file mode)')
+    parser.add_argument('--from-lang', help='Source language for translate-lang mode (e.g., en-se, sv-se)')
+    parser.add_argument('--to-lang', help='Target language for translate-lang mode (e.g., en-se, sv-se)')
+    
+    args = parser.parse_args()
+    
+    manager = TranslationManager(args.config)
+    
+    if args.mode == 'git-hook':
+        success = manager.translate_changed_files()
+        if not success:
+            sys.exit(1)
+    elif args.mode == 'sync-all':
+        success = manager.sync_all_files()
+        if not success:
+            sys.exit(1)
+    elif args.mode == 'translate-file':
+        if not args.source_file or not args.target_lang:
+            logger.error("--source-file and --target-lang are required for translate-file mode")
+            sys.exit(1)
+        success = manager.translate_specific_file(args.source_file, args.target_lang, args.source_lang)
+        if not success:
+            sys.exit(1)
+    elif args.mode == 'translate-lang':
+        if not args.from_lang or not args.to_lang:
+            logger.error("--from-lang and --to-lang are required for translate-lang mode")
+            sys.exit(1)
+        success = manager.translate_between_languages(args.from_lang, args.to_lang)
+        if not success:
+            sys.exit(1)
+
+if __name__ == "__main__":
+    main()

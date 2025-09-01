@@ -1,31 +1,31 @@
-# Vouchers - Your ticket to trainings
+# Clip card - Your ticket to training sessions
 
-## What are vouchers?
+## What is a punch card?
 
-Think of vouchers as tickets to trainings – simple and clear. Each training costs one card. It makes it easy to keep track of who's joining what, and gives you control over training usage.
+Think of punch cards as tickets to training sessions - simple and clear. Each training session costs one card. It makes it easy to keep track of who's coming to what, and gives you control over training usage.
 
-## How it works
+## Here's how it works
 
 ### When you start
-As a new user, you start with 0 vouchers. That's completely normal! You get cards from an administrator before you can participate in trainings.
+As a new user, you start with 0 punch cards. This is completely normal! You will receive cards from an administrator before you can participate in trainings.
 
 ### Registration vs attendance
-- **Register for free**: Sign up for as many trainings as you want – no card is used
-- **Attendance costs**: One card is deducted only when you actually mark attendance
+- **Sign up for free**: Sign up for as many trainings as you want - no card is used
+- **Attendance costs**: A card is drawn only when you actually mark attendance
 
-### Get cards back
-Cancel your attendance and you get the card back immediately. It's that simple!
+### Get card back
+If you cancel attendance, you get your card back immediately. It's that simple!
 
 ## Important rules
 
-### You need cards to participate
-- Without cards you can't mark attendance
+### You need a card to participate
+- Without a card you can't mark attendance
 - Always check your balance before marking attendance
-- Need more cards? Contact an administrator
+- Do you need more cards? Contact an administrator
 
-### Balance can't go negative
+### Balance cannot go negative
 - The platform prevents the balance from going below 0
-- You can't mark attendance without at least one card
+- You cannot mark attendance without at least one card
 
 ### Administrators manage cards
 - Only administrators can add or remove cards
@@ -34,18 +34,18 @@ Cancel your attendance and you get the card back immediately. It's that simple!
 
 ## Tips for using cards smartly
 
-1. **Plan ahead**: Sign up for trainings early, but mark attendance only when you're sure
+1. **Plan ahead**: Sign up for training early, but only mark attendance when you're sure
 2. **Keep track**: Check your balance regularly
-3. **Cancel in time**: Can't make it? Cancel attendance as soon as possible
-4. **Ask for more**: Contact administrator before you run out, not after
+3. **Cancel on time**: Can't make it? Cancel attendance as soon as possible
+4. **Request more**: Contact the administrator before you run out, not after
 
-## Common questions
+## Frequently asked questions
 
-**Can I use someone else's vouchers?**
-No, vouchers are personal and cannot be shared.
+**Can I use someone else's punch card?
+No, punch cards are personal and cannot be shared.
 
-**What happens if I mark attendance by mistake?**
-Cancel attendance immediately and you'll get the card back.
+**What happens if I mark attendance by mistake?
+Cancel the attendance immediately and you will get the card back.
 
-**Do I get cards back if I miss a training?**
-Only if you marked attendance and then cancel it. Did you never mark attendance? Then no card is consumed.
+**If I miss a training session, will I get my card back?
+Only if you marked attendance and then canceled it. Did you never mark attendance? Then no card will be used.

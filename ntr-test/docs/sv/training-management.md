@@ -1,114 +1,114 @@
-# Träningshantering - Administratörsguide
+# Utbildningshantering - Administratörshandbok
 
 ## Översikt
 
-Som administratör har du kontroll över träningsutbudet. Här får du allt du behöver för att skapa, redigera och hantera träningar enkelt och effektivt.
+Som administratör har du kontroll över träningserbjudandet. Här finns allt du behöver för att skapa, redigera och hantera träningspass på ett enkelt och effektivt sätt.
 
-## Skapa nya träningar
+## Skapa nya träningspass
 
 ### Så här gör du
-1. Gå till **Admin**-vyn
-2. Hitta "Skapa Träning"
+1. Gå till vyn **Admin**
+2. Hitta "Skapa utbildning"
 3. Fyll i:
-   - **Namn**: Ett tydligt namn för träningen (t.ex. "React Grunderna")
-   - **Beskrivning**: En beskrivning av vad träningen handlar om
-4. Klicka **"Skapa Träning"**
+   - **Namn**: Ett tydligt namn på utbildningen (t.ex. "React Basics")
+   - **Beskrivning**: En beskrivning av vad utbildningen handlar om
+4. Klicka på **"Skapa utbildning"**
 
-### Vad händer sedan?
-- Träningen skapas direkt
+### Vad händer härnäst?
+- Utbildningen skapas direkt
 - Den visas i listan för alla användare
-- Användare kan anmäla sig direkt
-- Du kan redigera träningen när som helst
+- Användarna kan registrera sig direkt
+- Du kan redigera utbildningen när som helst
 
-## Redigera träningar
+## Redigera utbildningar
 
 ### Så här gör du
-1. Gå till **Admin**-vyn
-2. Hitta träningen i listan
-3. Klicka **redigeringsikonen** (penna) bredvid träningen
+1. Gå till vyn **Admin**
+2. Hitta övningen i listan
+3. Klicka på **redigeringsikonen** (pennan) bredvid övningen
 4. Ändra namn och/eller beskrivning
-5. Klicka **"Spara"**
+5. Klicka på **"Spara"**
 
 ### Vad du kan ändra
-- **Namn**: Uppdatera träningens titel
+- **Namn**: Uppdatera titeln på övningen
 - **Beskrivning**: Ändra eller förbättra beskrivningen
-- **Alla ändringar syns direkt** för alla användare
+- **Alla ändringar är omedelbart synliga** för alla användare
 
-## Tips för träningshantering
+## Tips för hantering av övningar
 
-### Namnge träningar smart
-- **Använd tydliga namn**: "React Grunderna" istället för "Träning 1"
+### Namnge utbildningar på ett smart sätt
+- **Använd tydliga namn**: "React Basics" istället för "Utbildning 1"
 - **Inkludera nivå**: "JavaScript för nybörjare", "Avancerad CSS"
 - **Lägg till datum**: "React Workshop 2024"
-- **Var konsekvent**: Använd samma mönster för liknande träningar
+- **Var konsekvent**: Använd samma mönster för liknande utbildningar
 
 ### Skriv bra beskrivningar
-- **Lärandemål**: Vad lär sig deltagarna?
-- **Förkunskaper**: Vad behöver de kunna innan?
+- **Lärandemål**: Vad ska deltagarna lära sig?
+- **Förutsättningar**: Vad behöver de veta innan?
 - **Tid**: Hur lång tid tar det?
-- **Format**: Praktiskt, teoretiskt, eller både och?
+- **Format**: Praktiskt, teoretiskt eller både och?
 - **Målgrupp**: Vem är det för?
 
-### Exempel på bra beskrivning
+### Exempel på en bra beskrivning
 ```
-"React Grunderna - En introduktion till React för webbutvecklare som redan kan HTML, CSS och JavaScript. Vi går igenom komponenter, state och props. Praktisk workshop med hands-on övningar. Lämplig för nybörjare till React."
+"React Basics - En introduktion till React för webbutvecklare som redan kan HTML, CSS och JavaScript. Vi går igenom komponenter, state och props. Praktisk workshop med hands-on övningar. Lämplig för nybörjare på React."
 ```
 
-## Organisera träningsutbudet
+## Organisera utbildningserbjudandet
 
 ### Kategorisera smart
-- **Gruppera liknande träningar**: Sätt upp logiska kategorier
+- **Gruppera liknande utbildningar**: Skapa logiska kategorier
 - **Använd samma termer**: Konsekvent språk
-- **Skapa progression**: Från grundläggande till avancerat
+- **Skapa progression**: Från grundläggande till avancerad
 
 ### Planera i förväg
-- **Skapa träningar tidigt**: Ge användare tid att anmäla sig
-- **Balansera utbudet**: Blanda olika typer av träningar
-- **Lyssna på feedback**: Anpassa efter användarnas önskemål
+- **Skapa utbildningar tidigt**: Ge användarna tid att registrera sig
+- **Balansera erbjudandet**: Blanda olika typer av utbildningar
+- **Lyssna på feedback**: Anpassa efter användarnas preferenser
 
 ## Hantera kvalitet
 
 ### Granska regelbundet
-- **Gå igenom listan**: Ta bort föråldrade träningar
-- **Uppdatera beskrivningar**: Håll dem aktuella
-- **Samla feedback**: Fråga användare vad de tycker
+- **Granskningslista**: Ta bort föråldrade utbildningar
+- **Uppdatera beskrivningar**: Håll dem uppdaterade
+- **Samla in feedback**: Fråga användarna vad de tycker
 
 ### Förbättra kontinuerligt
-- **Lägg till nya träningar**: Baserat på intressen
+- **Lägga till nya utbildningar**: Baserat på intressen
 - **Förbättra befintliga**: Uppdatera baserat på feedback
-- **Experimentera**: Testa nya format
+- **Experiment**: Testa nya format
 
 ## Felsökning
 
 ### Vanliga problem
-**Kan inte skapa träning**
-- Kolla att alla fält är ifyllda
+**Kan inte skapa utbildning**
+- Kontrollera att alla fält är ifyllda
 - Se till att du har rätt behörigheter
 - Uppdatera sidan och försök igen
 
 **Ändringar sparas inte**
-- Kolla att du klickade "Spara"
-- Uppdatera sidan för att se ändringar
+- Kontrollera att du klickade på "Spara"
+- Uppdatera sidan för att se ändringarna
 - Kontakta support om problemet kvarstår
 
-**Träningen visas inte**
-- Kolla att träningen är korrekt skapad
-- Se till att den inte är dold
-- Uppdatera plattformen om nödvändigt
+**Träningspasset visas inte**
+- Kontrollera att träningspasset är korrekt skapat
+- Se till att det inte är dolt
+- Uppdatera plattformen om det behövs
 
 ## Tips för effektiv administration
 
 ### Kommunikation
-- **Informera användare**: Berätta när nya träningar läggs till
-- **Samla feedback**: Fråga vad användarna vill ha
-- **Dokumentera**: Håll koll på vad som fungerar
+- **Informera användarna**: Berätta för dem när nya utbildningar läggs till
+- **Samla in feedback**: Fråga vad användarna vill ha
+- **Dokumentera**: Hålla reda på vad som fungerar
 
 ### Automatisera
-- **Skapa mallar**: För liknande träningar
-- **Använd kopiering**: Kopiera befintliga som utgångspunkt
-- **Planera i förväg**: Skapa träningar för kommande perioder
+- **Skapa mallar**: För liknande utbildningar
+- **Använd replikering**: Kopiera befintliga som en utgångspunkt
+- **Planera framåt**: Skapa utbildningar för kommande perioder
 
 ### Kvalitetssäkring
-- **Granska regelbundet**: Gå igenom utbudet
-- **Uppdatera kontinuerligt**: Håll innehållet aktuellt
-- **Mät framgång**: Följ användning och feedback
+- **Granska regelbundet**: Granska erbjudandet
+- **Uppdatera kontinuerligt**: Håll innehållet uppdaterat
+- **Mät framgång**: Spåra användning och feedback
