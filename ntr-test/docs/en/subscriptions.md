@@ -1,4 +1,4 @@
-# Registration for training sessions
+# Register for trainings
 
 ## Overview
 
