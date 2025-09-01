@@ -1,4 +1,4 @@
-# User management - Administrator guide
+# User management - For administrators
 
 ## Overview
 
@@ -10,7 +10,7 @@ As an administrator, you have control over users and their punch cards. Here you
 1. Go to the **Admin** view
 2. Find "Create user"
 3. Fill in:
-   - **Full name**: The user's name (first name and last name)
+   - **Full name**: User's name (first name and last name)
    - **E-mail address**: An e-mail address that is not already in use
 4. Click on **"Create user"**
 
