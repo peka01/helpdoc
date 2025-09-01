@@ -5,7 +5,7 @@
       "baseUrl": "ntr-test",
       "locales": {
         "sv-se": {
-          "code": "sv",
+          "code": "SV",
           "name": "Svenska",
           "file_paths": {
             "overview": "docs/sv/overview.md",
@@ -18,7 +18,7 @@
           }
         },
         "en-se": {
-          "code": "en",
+          "code": "EN",
           "name": "English",
           "file_paths": {
             "overview": "docs/en/overview.md",

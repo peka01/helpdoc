@@ -57,6 +57,20 @@ class TranslationManager:
     
     def translate_text(self, text: str, target_lang: str, source_lang: str = "EN") -> str:
         """Translate text using DeepL API."""
+        # Validate language codes
+        valid_source_langs = ["EN", "DE", "FR", "IT", "JA", "ES", "PT", "RU", "ZH", "NL", "PL", "BG", "CS", "DA", "EL", "ET", "FI", "HU", "ID", "LT", "LV", "RO", "SK", "SL", "SV", "TR", "UK"]
+        valid_target_langs = ["BG", "CS", "DA", "DE", "EL", "EN", "ES", "ET", "FI", "FR", "HU", "ID", "IT", "JA", "LT", "LV", "NL", "PL", "PT", "RO", "RU", "SK", "SL", "SV", "TR", "UK", "ZH"]
+        
+        if source_lang not in valid_source_langs:
+            logger.error(f"Invalid source language code: {source_lang}")
+            return text
+        
+        if target_lang not in valid_target_langs:
+            logger.error(f"Invalid target language code: {target_lang}")
+            return text
+        
+        logger.info(f"Translating text from {source_lang} to {target_lang}")
+        
         try:
             response = requests.post(
                 self.deepl_api_url,
@@ -138,6 +152,11 @@ class TranslationManager:
         # Check if content was successfully extracted
         if not content:
             logger.error(f"Could not extract content from {source_file}. Skipping translation.")
+            return False
+        
+        # Skip translation if content is too short (likely not meaningful)
+        if len(content.strip()) < 10:
+            logger.warning(f"Content too short to translate (length: {len(content.strip())}). Skipping translation.")
             return False
         
         # Translate content
@@ -590,7 +609,13 @@ class TranslationManager:
                         source_code = language_configs[source_lang]['code'].upper()
                         target_code = target_config['code'].upper()
                         
+                        # Skip translation if source and target languages are the same
+                        if source_code == target_code:
+                            logger.warning(f"Skipping translation: source and target languages are the same ({source_code})")
+                            continue
+                        
                         logger.info(f"Translating {source_file} ({source_code}) → {target_file} ({target_code})")
+                        logger.info(f"Source language: {source_lang}, Target language: {target_lang_code}")
                         
                         if self.translate_markdown_file(source_file, target_file, source_code, target_code):
                             translated_files.append(target_file)
