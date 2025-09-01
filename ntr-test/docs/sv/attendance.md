@@ -2,7 +2,7 @@
 
 ## Översikt
 
-Här markerar du när du faktiskt deltar i utbildningar och hanterar dina stämpelkort. Det är hjärtat i plattformen - enkelt och smidigt.
+Här markerar du när du faktiskt deltar i utbildningar och hanterar ditt träningskort. Det är hjärtat i plattformen - enkelt och smidigt.
 
 ## Markera närvaro
 
