@@ -40,8 +40,11 @@ jobs:
         && sudo apt install gh -y
     
     - name: Authenticate GitHub CLI
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+        echo $GITHUB_TOKEN | gh auth login --with-token
+        gh auth status
     
     - name: Run translation
       env:
@@ -49,6 +52,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         cd ntr-test
+        echo "Current directory: $(pwd)"
+        echo "Files in docs directory:"
+        find docs -name "*.md" -type f
+        echo "Git status:"
+        git status
+        echo "Git log --oneline -5:"
+        git log --oneline -5
+        echo "Running translation script..."
         python translate.py --mode smart-translate
     
 

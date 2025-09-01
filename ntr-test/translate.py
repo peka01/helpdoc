@@ -206,6 +206,7 @@ class TranslationManager:
         source_lang = None
         source_section = None
         
+        # First try exact match
         for lang_code, lang_config in language_configs.items():
             for section, file_path in lang_config.get('file_paths', {}).items():
                 if file_path == changed_file:
@@ -215,9 +216,33 @@ class TranslationManager:
             if source_lang:
                 break
         
+        # If no exact match, try to infer from file path structure
         if not source_lang:
+            # Extract language from path (e.g., ntr-test/docs/sv/vouchers.md -> sv)
+            path_parts = changed_file.split('/')
+            if len(path_parts) >= 3 and path_parts[-2] in ['sv', 'en']:
+                detected_lang = path_parts[-2]
+                # Map detected language to config language codes
+                if detected_lang == 'sv':
+                    source_lang = 'sv-se'
+                elif detected_lang == 'en':
+                    source_lang = 'en-se'
+                
+                # Try to find the section by matching the filename
+                filename = path_parts[-1]
+                for lang_code, lang_config in language_configs.items():
+                    if lang_code == source_lang:
+                        for section, file_path in lang_config.get('file_paths', {}).items():
+                            if file_path.endswith(filename):
+                                source_section = section
+                                break
+                        break
+        
+        if not source_lang or not source_section:
             logger.warning(f"Could not determine language for {changed_file}")
             return []
+        
+        logger.info(f"Detected source language: {source_lang}, section: {source_section}")
         
         # Find corresponding files in ALL other languages (bidirectional translation)
         for lang_code, lang_config in language_configs.items():
@@ -464,6 +489,7 @@ class TranslationManager:
             source_lang = None
             source_section = None
             
+            # First try exact match
             for lang_code, lang_config in language_configs.items():
                 for section, file_path in lang_config.get('file_paths', {}).items():
                     if file_path == changed_file:
@@ -473,11 +499,33 @@ class TranslationManager:
                 if source_lang:
                     break
             
+            # If no exact match, try to infer from file path structure
             if not source_lang:
+                # Extract language from path (e.g., ntr-test/docs/sv/vouchers.md -> sv)
+                path_parts = changed_file.split('/')
+                if len(path_parts) >= 3 and path_parts[-2] in ['sv', 'en']:
+                    detected_lang = path_parts[-2]
+                    # Map detected language to config language codes
+                    if detected_lang == 'sv':
+                        source_lang = 'sv-se'
+                    elif detected_lang == 'en':
+                        source_lang = 'en-se'
+                    
+                    # Try to find the section by matching the filename
+                    filename = path_parts[-1]
+                    for lang_code, lang_config in language_configs.items():
+                        if lang_code == source_lang:
+                            for section, file_path in lang_config.get('file_paths', {}).items():
+                                if file_path.endswith(filename):
+                                    source_section = section
+                                    break
+                            break
+            
+            if not source_lang or not source_section:
                 logger.warning(f"Could not determine language for {changed_file}")
                 continue
             
-            logger.info(f"Processing changed file: {changed_file} (language: {source_lang})")
+            logger.info(f"Processing changed file: {changed_file} (language: {source_lang}, section: {source_section})")
             
             # Find the corresponding file in the OTHER language
             for target_lang_code, target_config in language_configs.items():
@@ -491,6 +539,37 @@ class TranslationManager:
                         
                         if not self.translate_markdown_file(changed_file, target_file, source_code, target_code):
                             success = False
+        
+        if success and markdown_files:
+            # Create a new branch for translations
+            branch_name = f"auto-translate-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+            if not self.create_translation_branch(branch_name):
+                logger.error("Failed to create translation branch")
+                return False
+            
+            # Get all translated files by checking what files were modified
+            translated_files = []
+            for changed_file in markdown_files:
+                # Find corresponding files that should have been translated
+                translations = self.find_corresponding_files(changed_file)
+                for source_file, target_file, source_lang, target_lang in translations:
+                    if os.path.exists(target_file):
+                        translated_files.append(target_file)
+            
+            if translated_files:
+                # Commit translated files
+                if self.commit_translations(translated_files, branch_name):
+                    # Create pull request
+                    if self.create_pull_request(branch_name, translated_files):
+                        logger.info(f"Pull request created for branch: {branch_name}")
+                    else:
+                        logger.error("Failed to create pull request")
+                        success = False
+                else:
+                    logger.error("Failed to commit translations")
+                    success = False
+            else:
+                logger.info("No files were translated, skipping PR creation")
         
         if success:
             logger.info("Smart translation completed successfully")
@@ -537,6 +616,11 @@ class TranslationManager:
             # Commit
             subprocess.run(['git', 'commit', '-m', commit_message], check=True)
             logger.info(f"Committed {len(translated_files)} translated files")
+            
+            # Push the branch to remote repository
+            subprocess.run(['git', 'push', 'origin', branch_name], check=True)
+            logger.info(f"Pushed branch {branch_name} to remote repository")
+            
             return True
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to commit translations: {e}")
