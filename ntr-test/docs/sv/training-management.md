@@ -1,8 +1,8 @@
-# Utbildningshantering - Administratörshandbok
+# Training Management - Administratörshandbok
 
 ## Översikt
 
-Som administratör har du kontroll över träningserbjudandet. Här finns allt du behöver för att skapa, redigera och hantera träningspass på ett enkelt och effektivt sätt.
+Som administratör har du kontroll över utbildningserbjudandet. Det innehåller allt du behöver för att skapa, redigera och hantera utbildningstillfällen på ett enkelt och effektivt sätt.
 
 ## Skapa nya träningspass
 
@@ -10,8 +10,8 @@ Som administratör har du kontroll över träningserbjudandet. Här finns allt d
 1. Gå till vyn **Admin**
 2. Hitta "Skapa utbildning"
 3. Fyll i:
-   - **Namn**: Ett tydligt namn på utbildningen (t.ex. "React Basics")
-   - **Beskrivning**: En beskrivning av vad utbildningen handlar om
+   - **Namn**: Ett tydligt namn för utbildningen (t.ex. "React Basics")
+   - **Beskrivning: En beskrivning av vad utbildningen handlar om
 4. Klicka på **"Skapa utbildning"**
 
 ### Vad händer härnäst?
@@ -20,11 +20,11 @@ Som administratör har du kontroll över träningserbjudandet. Här finns allt d
 - Användarna kan registrera sig direkt
 - Du kan redigera utbildningen när som helst
 
-## Redigera utbildningar
+## Redigera utbildningskurser
 
 ### Så här gör du
 1. Gå till vyn **Admin**
-2. Hitta övningen i listan
+2. Leta upp övningen i listan
 3. Klicka på **redigeringsikonen** (pennan) bredvid övningen
 4. Ändra namn och/eller beskrivning
 5. Klicka på **"Spara"**
@@ -34,7 +34,7 @@ Som administratör har du kontroll över träningserbjudandet. Här finns allt d
 - **Beskrivning**: Ändra eller förbättra beskrivningen
 - **Alla ändringar är omedelbart synliga** för alla användare
 
-## Tips för hantering av övningar
+## Tips för att hantera övningar
 
 ### Namnge utbildningar på ett smart sätt
 - **Använd tydliga namn**: "React Basics" istället för "Utbildning 1"
@@ -44,8 +44,8 @@ Som administratör har du kontroll över träningserbjudandet. Här finns allt d
 
 ### Skriv bra beskrivningar
 - **Lärandemål**: Vad ska deltagarna lära sig?
-- **Förutsättningar**: Vad behöver de veta innan?
-- **Tid**: Hur lång tid tar det?
+- **Förutsättningar**: Vad behöver de veta i förväg?
+- **Tid**: Hur lång tid kommer det att ta?
 - **Format**: Praktiskt, teoretiskt eller både och?
 - **Målgrupp**: Vem är det för?
 
@@ -57,7 +57,7 @@ Som administratör har du kontroll över träningserbjudandet. Här finns allt d
 ## Organisera utbildningserbjudandet
 
 ### Kategorisera smart
-- **Gruppera liknande utbildningar**: Skapa logiska kategorier
+- **Gruppera liknande kurser**: Skapa logiska kategorier
 - **Använd samma termer**: Konsekvent språk
 - **Skapa progression**: Från grundläggande till avancerad
 
@@ -74,7 +74,7 @@ Som administratör har du kontroll över träningserbjudandet. Här finns allt d
 - **Samla in feedback**: Fråga användarna vad de tycker
 
 ### Förbättra kontinuerligt
-- **Lägga till nya utbildningar**: Baserat på intressen
+- **Lägga till nya kurser**: Baserat på intressen
 - **Förbättra befintliga**: Uppdatera baserat på feedback
 - **Experiment**: Testa nya format
 

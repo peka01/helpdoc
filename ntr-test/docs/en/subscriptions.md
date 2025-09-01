@@ -1,27 +1,27 @@
-# Training registrations - Sign up for trainings
+# Registration for training sessions
 
 ## Overview
 
-Easily sign up for trainings that interest you. It's the first step - signing up is free and allows you to participate when the time comes.
+Easily register for trainings that interest you. That's the first step - registering is free and allows you to participate when the time comes.
 
-## How it works
+## How things work
 
 ### What is a registration?
-A registration is your intention to participate in a training session. It's like 'reserving a place' - you show interest but do not commit to actually attending.
+A registration means that you show interest in joining. It's like 'reserving a seat' - you show interest but don't commit to actually attending.
 
-### Benefits of signing up
-- **Free**: There is no cost to sign up for a voucher
+### Benefits of registering
+- **Free**: There is no cost to register for a training session with us
 - **Flexibility**: You can unsubscribe at any time
 - **Overview**: You see all the trainings you are interested in
 - **Reminders**: You remember which trainings are available
 
-## Sign up for trainings
+## Register for trainings
 
 ### Here's how you do it
 1. Go to the **Registration page**
 2. Browse the available trainings
 3. Read the description of each training
-4. Click **"Register"** next to the training you want to attend
+4. Click on **"Register"** next to the training you want to attend
 5. Confirm your registration
 
 ### What you see for each training
@@ -33,20 +33,20 @@ A registration is your intention to participate in a training session. It's like
 
 ## Manage your registrations
 
-### See your registrations
+### View your registrations
 - **Registration page**: Shows all trainings you are registered for
-- **Attendance view**: Shows the registration status for each training
+- **Attendance view**: Shows the registration status of each training
 - **Overview**: You can clearly see which trainings you plan to attend
 
-### Unregister from trainings
+### Unsubscribe from trainings
 1. Go to the **Registration page**
 2. Find the training you want to unregister from
-3. Click **"Unregister"**
+3. Click on **"Unsubscribe"**
 4. Confirm that you want to unsubscribe
 
 ### What happens when you unsubscribe?
 - You will be removed from the participant list
-- Your voucher balance is not affected
+- The balance of your voucher will not be affected
 - You can re-register if you wish
 - The place becomes available to others
 
@@ -66,47 +66,47 @@ A registration is your intention to participate in a training session. It's like
 
 ### Plan your training sessions
 1. **Sign up for interesting trainings**: Sign up for trainings that seem interesting
-2. **Keep an eye on your schedule**: Make sure your trainings don't clash with other activities
-3. **Be realistic**: Don't sign up for more trainings than you can handle
+2. **Keep an eye on your schedule**: Make sure your workouts don't clash with other activities
+3. **Be realistic**: Don't sign up for more workouts than you can handle
 
 ### Manage changes
-1. **Cancel in time**: If you know you cannot attend, cancel as soon as possible
+1. **Cancel in time**: If you know you can't attend, cancel as soon as possible
 2. **Communicate**: Inform the trainer if you cannot attend
 3. **Reschedule**: Use your time for other trainings instead
 
 ### Organize your registrations
-1. **Prioritize**: Focus on trainings that are most important to you
+1. **Prioritize**: Focus on the trainings that are most important to you
 2. **Balance**: Mix different types of training
 3. **Update regularly**: Review your registrations regularly
 
-## Frequently asked questions
+## Frequently asked questions and answers
 
 **Can I sign up for several trainings at the same time?
-Yes, you can sign up for as many trainings as you want.
+Yes, you can register for as many trainings as you want.
 
 **What happens if I sign up for a training that is full?
 You will be notified that the training is full and you will not be able to register.
 
-**Can I sign up for trainings that have already started?**
-No, you can only sign up for future trainings.
+**Can I register for trainings that have already started?
+No, you can only register for future trainings.
 
-**Do I have to register in order to participate in a training session?**
-Yes, you need to register first, then mark attendance when the time comes.
+**Do I have to register in order to participate in a training session?
+Yes, you need to register first and then mark attendance when the time comes.
 
-**What happens if I forget to unsubscribe?
-Nothing serious - you can still cancel later, and no vouchers will be used up until you mark attendance.
+**What happens if I forget to deregister?
+Nothing serious - you can still unregister later and no trainings will be consumed until you are marked as present.
 
-**Can I see who else is registered for a training session?
+**Can I see who is registered for a training?
 It depends on the platform settings - ask the administrator about this.
 
 ## Troubleshooting
 
-**Cannot sign up**
+**Cannot register
 - Check that the training is not full
-- Make sure the training has not already started
+- Check that the training has not already started
 - Refresh the page and try again
 
-**The registration is not displayed**
+**Registration is not displayed**
 - Check that you are logged in with the correct account
 - Refresh the page to see the latest changes
 - Contact the administrator if the problem persists
