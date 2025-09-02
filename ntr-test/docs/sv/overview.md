@@ -1,5 +1,5 @@
 # Välkommen till din nya värld - en värld av utbildning!
-Glöm komplicerade system och pappersarbete. Här är en enkel och smidig lösning för att organisera utbildning - så att du kan fokusera på det som verkligen betyder något.
+Glöm svåra system och pappersarbete. Här är en enkel och smidig lösning för att organisera utbildning - så att du kan fokusera på det som verkligen betyder något.
 ## Vad får du ut av det?
 ### Som deltagare:
 - **Lätt att gå med**: Registrera dig för utbildningar på några sekunder
