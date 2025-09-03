@@ -19,7 +19,7 @@ En registrering innebär att du visar intresse för att vara med. Det är som at
 
 ### Så här gör du
 1. Gå till **Registreringssidan**
-2. Bläddra bland de tillgängliga träningarna
+2. Bläddra bland träningarna i listan
 3. Läs beskrivningen av varje träning
 4. Klicka på **"Registrera dig"** bredvid den träning du vill delta i
 5. Bekräfta din registrering
