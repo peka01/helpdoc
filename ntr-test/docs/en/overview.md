@@ -1,6 +1,6 @@
 # Welcome to your new world - the world of education!
 Here we make it easy! A crazy simple and easy solution to organize training - so you can focus on what really matters.
-## What do you get out of it?
+## What's in it for you?
 ### As a participant:
 - **Easy to join**: Sign up for trainings in seconds
 - **Clip cards that work**: Use your cards to attend trainings
@@ -22,4 +22,4 @@ It is simple! We have three things that we look at:
 - **Secure**: All information is stored securely
 - **Grows with you**: Works equally well for small and large groups
 ## Get started
-Explore the help sections to learn how to best use the platform. Each section contains clear instructions and tips to help you get the most out of your time.
+Explore the help sections to learn how to best use the platform. Each section contains clear instructions and tips to help you make the most of your time.

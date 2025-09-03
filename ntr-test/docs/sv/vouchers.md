@@ -1,8 +1,8 @@
-# Träningskortet- Din biljett till träningstillfällena
+# Utbildningskortet - din biljett till utbildningstillfällena
 
-## Vad är ett träningskort?
+## Vad är ett utbildningskort?
 
-Tänk på träningskort som biljetter till träningstillfällen - enkelt och tydligt. Varje träningsstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
+Tänk på klippkort som biljetter till utbildningstillfällen - enkelt och tydligt. Varje utbildningstillfälle kostar ett kort. Det gör det enkelt att hålla reda på vem som kommer till vad och ger dig kontroll över träningsanvändningen.
 
 ## Så här fungerar det
 
@@ -13,6 +13,9 @@ Som ny användare börjar du med 0 stämpelkort. Detta är helt normalt! Du komm
 - **Registrera dig gratis**: Registrera dig för så många utbildningar du vill - inget kort används
 - **Närvaro kostar**: Ett kort dras endast när du faktiskt markerar närvaro
 
+### Få tillbaka ditt kort
+Om du avbokar din närvaro får du tillbaka ditt kort omedelbart. Så enkelt är det!
+
 ## Viktiga regler
 
 ### Du behöver ett kort för att delta
@@ -22,24 +25,24 @@ Som ny användare börjar du med 0 stämpelkort. Detta är helt normalt! Du komm
 
 ### Saldot kan inte bli negativt
 - Plattformen hindrar saldot från att gå under 0
-- Du kan inte markera att du är närvarande utan minst ett kort
+- Du kan inte markera närvaro utan minst ett kort
 
 ### Administratörer hanterar kort
 - Endast administratörer kan lägga till eller ta bort kort
 - Be om fler kort när du behöver dem
-- Coacherna ser alla användares saldon
+- Administratörer ser alla användares saldon
 
 ## Tips för att använda kort på ett smart sätt
 
 1. **Planera i förväg**: Anmäl dig till utbildning tidigt, men markera närvaro först när du är säker på att
 2. **Håll koll**: Kontrollera ditt saldo regelbundet
 3. **Avboka i tid**: Kan du inte komma? Avboka din närvaro så snart som möjligt
-4. **Begära mer**: Kontakta coacherna innan det tar slut, inte efter
+4. **Begära mer**: Kontakta administratören innan det tar slut, inte efter
 
-## FAQ
+## Ofta ställda frågor
 
-**Kan jag använda någon annans träningskort?
-Nej, korten  är personliga och kan inte delas.
+**Kan jag använda någon annans stämpelkort?
+Nej, stämpelkort är personliga och kan inte delas.
 
 **Vad händer om jag markerar närvaro av misstag?
 Avboka närvaron omedelbart så får du tillbaka kortet.
