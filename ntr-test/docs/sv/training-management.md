@@ -1,4 +1,4 @@
-# Training Management - Administratörshandbok
+# Så här hanterar du träningar som administratör
 
 ## Översikt
 
