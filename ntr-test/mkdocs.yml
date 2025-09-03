@@ -45,6 +45,8 @@ nav:
     - Content Guidelines: CONTENT_GUIDELINES.md
     - Tone and Voice: TONE_AND_VOICE_GUIDELINES.md
     - Writing Checklist: WRITING_CHECKLIST.md
+  - Tools:
+    - StackEdit Editor: stackedit-editor.md
 
 # Plugins
 plugins:

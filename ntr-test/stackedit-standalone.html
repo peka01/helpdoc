@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StackEdit Markdown Editor - NTR Help Documentation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .header {
+            background: #1976d2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .toolbar {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .toolbar-left, .toolbar-right {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .btn {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #1565c0;
+        }
+        
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        .editor-container {
+            height: calc(100vh - 140px);
+            border: none;
+            width: 100%;
+        }
+        
+        .info-panel {
+            background: white;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .info-panel strong {
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .toolbar-left, .toolbar-right {
+                justify-content: center;
+            }
+            
+            .header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📝 StackEdit Markdown Editor</h1>
+        <p>Professional markdown editor for NTR Help Documentation</p>
+    </div>
+    
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <a href="../index.html" class="btn btn-secondary">← Back to Docs</a>
+            <a href="https://stackedit.io/app#" target="_blank" class="btn">Open in New Tab</a>
+        </div>
+        <div class="toolbar-right">
+            <span style="color: #666; font-size: 0.9rem;">Full-screen editor below</span>
+        </div>
+    </div>
+    
+    <div class="info-panel">
+        <strong>💡 Tip:</strong> This editor supports GitHub Flavored Markdown, MathJax, Mermaid diagrams, and more. 
+        Use <kbd>Ctrl+S</kbd> to save, <kbd>Ctrl+Shift+E</kbd> to toggle editor/preview mode.
+    </div>
+    
+    <iframe 
+        src="https://stackedit.io/app#" 
+        class="editor-container"
+        title="StackEdit Markdown Editor"
+        allowfullscreen>
+    </iframe>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Add keyboard shortcuts info
+            const shortcuts = {
+                'Ctrl+S': 'Save',
+                'Ctrl+Shift+S': 'Save as',
+                'Ctrl+O': 'Open file',
+                'Ctrl+Shift+O': 'Open from',
+                'Ctrl+Shift+P': 'Export to',
+                'Ctrl+Shift+E': 'Toggle editor/preview'
+            };
+            
+            // You can add more interactive features here
+            console.log('StackEdit Editor loaded successfully!');
+        });
+    </script>
+</body>
+</html>
