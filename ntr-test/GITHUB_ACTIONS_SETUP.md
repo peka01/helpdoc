@@ -24,7 +24,7 @@ This guide explains how to set up automatic deployment of your MkDocs documentat
 
 ## Step 3: Push the Workflow File
 
-The `.github/workflows/deploy.yml` file has been created. Simply push this to your repository:
+The `.github/workflows/deploy.yml` file has been created in the root of your repository. Simply push this to your repository:
 
 ```bash
 git add .github/workflows/deploy.yml
