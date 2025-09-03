@@ -89,9 +89,42 @@ Keywords are used to automatically select relevant help content based on the use
 
 ## Deployment
 
-Help content changes are deployed automatically when:
-- Changes are pushed to the main branch
-- The Docker container is rebuilt
-- The application is restarted
+### Automatic GitHub Pages Deployment
+
+This documentation is automatically deployed to GitHub Pages after every push to the main branch using GitHub Actions.
+
+**Features:**
+- ✅ Automatic deployment on every push
+- ✅ Built with MkDocs and Material theme
+- ✅ Available at: `https://[username].github.io/[repository-name]/`
+- ✅ No manual intervention required
+
+**Setup:**
+1. The GitHub Actions workflow (`.github/workflows/deploy.yml`) is already configured
+2. Enable GitHub Pages in your repository settings
+3. Select "GitHub Actions" as the source
+4. Push changes to trigger automatic deployment
+
+For detailed setup instructions, see [GITHUB_ACTIONS_SETUP.md](GITHUB_ACTIONS_SETUP.md).
+
+### Local Development
+
+For local development and testing:
+```bash
+cd ntr-test
+pip install -r requirements.txt
+mkdocs serve
+```
+
+The documentation will be available at `http://localhost:8000`
+
+### Manual Deployment
+
+If you need to deploy manually:
+```bash
+cd ntr-test
+mkdocs build
+mkdocs gh-deploy
+```
 
 No database changes are required since content is loaded from Markdown files.

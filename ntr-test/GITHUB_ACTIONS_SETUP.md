@@ -1,117 +1,91 @@
-# GitHub Actions Translation Setup
+# GitHub Actions Setup for Automatic Deployment
 
-This guide explains how to set up automatic translation PRs using GitHub Actions.
+This guide explains how to set up automatic deployment of your MkDocs documentation to GitHub Pages using GitHub Actions.
 
-## Overview
+## Prerequisites
 
-The GitHub Action workflow will automatically:
-1. Detect when documentation files are updated in any language
-2. Translate the changes to all other configured languages
-3. Create a pull request with the title "Translation needed - content update"
-4. Include all translated files for review
+1. Your repository must be public, or you must have GitHub Pro/Enterprise for private repository GitHub Pages
+2. You must have admin access to the repository
 
-## Setup Requirements
+## Step 1: Enable GitHub Pages
 
-### 1. Repository Secrets
+1. Go to your repository on GitHub
+2. Click on **Settings** tab
+3. Scroll down to **Pages** section in the left sidebar
+4. Under **Source**, select **GitHub Actions**
+5. Click **Save**
 
-You need to add the following secrets to your GitHub repository:
+## Step 2: Configure GitHub Pages Settings
 
-1. Go to your repository → Settings → Secrets and variables → Actions
-2. Add the following secrets:
+1. In the **Pages** section, ensure the following settings:
+   - **Source**: GitHub Actions
+   - **Branch**: Leave as default (GitHub Actions will handle this)
+   - **Custom domain** (optional): If you have a custom domain, add it here
 
-**DEEPL_API_KEY**
-- Your DeepL API key for translation services
-- Get one from: https://www.deepl.com/pro-api
+## Step 3: Push the Workflow File
 
-**GITHUB_TOKEN** (usually auto-configured)
-- Used for creating pull requests
-- Should be automatically available in GitHub Actions
+The `.github/workflows/deploy.yml` file has been created. Simply push this to your repository:
 
-### 2. File Structure
-
-Ensure your documentation follows this structure:
-```
-docs/
-├── en/
-│   ├── overview.md
-│   ├── subscriptions.md
-│   └── ...
-├── sv/
-│   ├── overview.md
-│   ├── subscriptions.md
-│   └── ...
-└── ...
+```bash
+git add .github/workflows/deploy.yml
+git commit -m "Add GitHub Actions workflow for automatic deployment"
+git push origin main
 ```
 
-### 3. Configuration File
+## Step 4: Verify Deployment
 
-Make sure your `help-config.json` file is properly configured with:
-- Language configurations for all supported languages
-- File path mappings for each language
-- DeepL API configuration
+1. After pushing, go to the **Actions** tab in your repository
+2. You should see the "Deploy to GitHub Pages" workflow running
+3. Once completed, your documentation will be available at:
+   - `https://[username].github.io/[repository-name]/`
+   - Or your custom domain if configured
 
 ## How It Works
 
-1. **Trigger**: The workflow triggers when any `.md` file in the `docs/` directory is pushed to the `main` branch
-2. **Detection**: It detects which files were changed in the last commit
-3. **Translation**: Runs bidirectional translation between all configured languages
-4. **PR Creation**: Creates a new branch with translations and opens a PR
+The workflow automatically:
 
-## Workflow Steps
-
-1. **Checkout**: Gets the repository code
-2. **Setup**: Installs Python and dependencies
-3. **GitHub CLI**: Installs GitHub CLI for PR creation
-4. **Translation**: Runs the translation script
-5. **Commit**: Commits translation changes to a new branch
-6. **PR**: Creates a pull request for review
-
-## Testing the Setup
-
-To test if the workflow is working:
-
-1. Make a small change to any documentation file in `docs/en/` or `docs/sv/`
-2. Commit and push the change to the `main` branch
-3. Check the Actions tab in your repository
-4. You should see a new workflow run
-5. If successful, a new PR titled "Translation needed - content update" will be created
+1. **Triggers** on every push to `main` or `master` branch
+2. **Builds** your MkDocs documentation using Python 3.9
+3. **Installs** dependencies from `requirements.txt`
+4. **Builds** the site using `mkdocs build`
+5. **Deploys** to GitHub Pages
 
 ## Troubleshooting
 
-### Workflow Not Triggering
-- Ensure files are in the `docs/` directory
-- Check that the workflow file is in `.github/workflows/`
-- Verify the branch name is `main`
+### Common Issues
 
-### Translation Fails
-- Check that `DEEPL_API_KEY` secret is set
-- Verify your `help-config.json` is properly configured
-- Check the workflow logs for specific error messages
+1. **Build fails**: Check the Actions tab for error messages
+2. **Dependencies missing**: Ensure all required packages are in `requirements.txt`
+3. **Permission errors**: Verify the workflow has the correct permissions
 
-### PR Not Created
-- Ensure `GITHUB_TOKEN` has sufficient permissions
-- Check that GitHub CLI is properly installed
-- Verify the repository has pull request creation enabled
+### Manual Trigger
 
-## Manual Testing
+You can manually trigger the workflow:
+1. Go to **Actions** tab
+2. Click on **Deploy to GitHub Pages**
+3. Click **Run workflow**
+4. Select the branch and click **Run workflow**
 
-You can test the translation script locally:
+## Customization
 
-```bash
-# Test the GitHub Actions mode
-python translate.py --mode github-actions
+### Branch Protection
 
-# Test sync all languages
-python translate.py --mode sync-all
+Consider protecting your main branch:
+1. Go to **Settings** → **Branches**
+2. Add rule for `main` branch
+3. Enable **Require pull request reviews before merging**
+4. Enable **Require status checks to pass before merging**
 
-# Test specific file translation
-python translate.py --mode translate-file --source-file docs/en/subscriptions.md --target-lang SV
-```
+### Environment Variables
 
-## Configuration
+If you need custom environment variables:
+1. Go to **Settings** → **Secrets and variables** → **Actions**
+2. Add repository secrets as needed
+3. Reference them in the workflow using `${{ secrets.SECRET_NAME }}`
 
-The workflow uses these key files:
-- `.github/workflows/auto-translate.yml` - GitHub Action workflow
-- `translate.py` - Translation script
-- `help-config.json` - Language and file configuration
-- `requirements.txt` - Python dependencies
+## Support
+
+If you encounter issues:
+1. Check the GitHub Actions logs in the **Actions** tab
+2. Verify your `mkdocs.yml` configuration
+3. Ensure all dependencies are properly specified in `requirements.txt`
