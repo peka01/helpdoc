@@ -1,5 +1,5 @@
-# Welcome to your new world - a world of training!
-Forget complicated systems and paperwork. Here's a simple and easy solution to organize training - so you can focus on what really matters.
+# Welcome to your new world - the world of education!
+Forget about difficult systems and paperwork. Here's a simple and easy solution to organize training - so you can focus on what really matters.
 ## What's in it for you?
 ### As a participant:
 - **Easy to join**: Sign up for trainings in seconds
@@ -10,16 +10,16 @@ Forget complicated systems and paperwork. Here's a simple and easy solution to o
 - **Manage users easily**: Create and update accounts with ease
 - **Organize trainings smoothly**: Create, edit and plan activities
 - **Hand out punch cards**: Manage cards for all users
-- **Follow what's happening**: View statistics and reports
-## Here's how it works
-It is simple! We have three main parts:
+- **Track what's happening**: View statistics and reports
+## This is how it works
+It is simple! We have three things that we look at:
 1. **Users** - Participants who want to join trainings
 2. **Trainings** - Courses and activities that users can join
 3. **Clipboard** - What is used to participate in trainings
 ## Technical basis
-- **Works everywhere**: Open in any browser
+- ** Works everywhere**: Opens in all browsers
 - **Updates instantly**: Changes are visible immediately without reloading
-- **Secure**: All information is stored safely
+- **Secure**: All information is stored securely
 - **Grows with you**: Works equally well for small and large groups
 ## Get started
-Explore the help sections to learn how to use the platform in the best way. Each section has clear instructions and tips to help you make the most of your time.
+Explore the help sections to learn how to best use the platform. Each section contains clear instructions and tips to help you get the most out of your time.
