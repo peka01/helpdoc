@@ -1,4 +1,4 @@
-# Välkommen till din nya testvärld - en värld av utbildning!
+# Välkommen till din nya värld - utbildningsvärlden!
 Glöm svåra system och pappersarbete. Här är en enkel och smidig lösning för att organisera utbildning - så att du kan fokusera på det som verkligen betyder något.
 ## Vad får du ut av det?
 ### Som deltagare:
