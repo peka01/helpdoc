@@ -1,4 +1,4 @@
-# Welcome to your new world - the world of education!
+# Welcome to the world of education!
 Here we make it easy! A crazy simple and easy solution to organize training - so you can focus on what really matters.
 ## What do you get out of it?
 ### As a participant:
