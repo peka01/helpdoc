@@ -1,4 +1,4 @@
-# Register for trainings
+# Register for trainings REMOTE
 
 ## Overview
 
